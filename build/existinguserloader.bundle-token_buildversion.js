@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 154:
+/***/ 156:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30,7 +30,7 @@ var _typeCodes = __webpack_require__(6);
 
 var typeCd = _interopRequireWildcard(_typeCodes);
 
-var _popup = __webpack_require__(159);
+var _popup = __webpack_require__(161);
 
 var _popup2 = _interopRequireDefault(_popup);
 
@@ -139,14 +139,14 @@ exports.default = ExistingUserLoader;
 
 /***/ }),
 
-/***/ 159:
+/***/ 161:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports=function(e){var a={};function s(t){if(a[t])return a[t].exports;var l=a[t]={i:t,l:!1,exports:{}};return e[t].call(l.exports,l,l.exports,s),l.l=!0,l.exports}return s.m=e,s.c=a,s.d=function(e,a,t){s.o(e,a)||Object.defineProperty(e,a,{configurable:!1,enumerable:!0,get:t})},s.n=function(e){var a=e&&e.__esModule?function(){return e.default}:function(){return e};return s.d(a,"a",a),a},s.o=function(e,a){return Object.prototype.hasOwnProperty.call(e,a)},s.p="",s(s.s=0)}([function(e,a,s){"use strict";Object.defineProperty(a,"__esModule",{value:!0});var t=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var s=arguments[a];for(var t in s)Object.prototype.hasOwnProperty.call(s,t)&&(e[t]=s[t])}return e};a.default=c;var l=s(1),o=d(l),r=d(s(2)),n=d(s(3));function d(e){return e&&e.__esModule?e:{default:e}}function c(e){var a="";e.title&&(a=o.default.createElement("h2",{className:"modal-title h4",id:e.modalHeaderTitleId,dangerouslySetInnerHTML:{__html:e.title}}));var s=e.isMobile?e.isEuropass?"btn ":"btn btn-lg":"btn btn-sm";e.cssClass&&e.cssClass.btnPrimary&&(s+=" "+e.cssClass.btnPrimary.trim()),e.showFileNameBox&&e.docFileNameError&&(s+=" disabled");var r={type:"submit",onClick:e.onPrimaryClick,className:s};e.primaryDisabled&&(r=t({},r,{disabled:e.primaryDisabled})),e.btnPrimaryId&&(r=t({},r,{id:e.btnPrimaryId}));var d="";e.btnPrimaryLabel&&(e.addWrkExpButtonId&&(r.id=e.addWrkExpButtonId),d=o.default.createElement("button",t({},r,{id:r.id||e.btnPrimaryId||"modal-btn-primary"}),function(e){return e.isCTALoaderEnabled?o.default.createElement(l.Fragment,null,o.default.createElement("span",{className:e.cssClass.btnPrimaryLoaderLabelClass||""},e.btnPrimaryLabel),e.CTALoaderJsx):o.default.createElement(l.Fragment,null,e.btnPrimaryLabel)}(e)));var c="";if(e.btnSecondaryLabel){var i=e.cssClass&&e.cssClass.btnSecondary?"btn btn-sm "+e.cssClass.btnSecondary:"btn ",u=e.cssClass&&e.cssClass.btnSecondary?(e.isEuropass?"btn btn-sm ":"btn btn-lg ")+e.cssClass.btnSecondary:"btn ";r={type:"button",onClick:e.onSecondaryClick,className:e.isMobile?u:i},e.secondaryDisabled&&(r=t({},r,{disabled:e.secondaryDisabled})),e.continueToEducButtonId&&(r.id=e.continueToEducButtonId),c=o.default.createElement("button",t({},r,{id:e.btnSecondaryId||"modal-btn-secondary"}),e.btnSecondaryLabel)}var m="modal-header";e.cssClass&&e.cssClass.modalHeader&&(m+=" "+e.cssClass.modalHeader.trim());var b=e.cssClass.headerIconClassName,f=o.default.createElement("div",{className:m,id:e.modalHeaderId||"modal-header-block"},e.isHeaderIcon&&o.default.createElement("i",{className:"icon-header "+(b||"")}),a,e.closeModal&&!e.hideCloseIcon&&o.default.createElement("button",{type:"button",onClick:function(a){return e.closeModal(a,!0)},className:"close","data-dismiss":"modal","aria-label":"Close"},o.default.createElement("i",{className:"icon-close-modal icon-close","aria-hidden":"true"})));0==e.hasHeader&&(f="");var C="modal-footer ";e.cssClass&&e.cssClass.modalFooter&&(C+=" "+e.cssClass.modalFooter.trim());var p="";p=e.footerBtnSwap?o.default.createElement("div",{className:C},c,d,e.isFooterLinkText):o.default.createElement("div",{className:C},d,c,e.isFooterLinkText);var y="footer-icon";e.cssClass&&e.cssClass.modalFooterIcon&&(y+=" "+e.cssClass.modalFooterIcon.trim());var v=o.default.createElement("div",{className:y});0==e.hasFooterIcon&&(v=""),0==e.hasFooter&&(p="");var h="modal-content";e.cssClass&&e.cssClass.modalContent&&(h+=" "+e.cssClass.modalContent.trim());var E={};return e.parentSelector&&(E.parentSelector=e.parentSelector),o.default.createElement(n.default,t({isOpen:e.isOpen,onAfterOpen:e.onShow,shouldCloseOnOverlayClick:e.shouldCloseOnOverlayClick||!1,ariaHideApp:!1,onRequestClose:e.closeModal,shouldCloseOnEsc:e.shouldCloseOnEsc,contentRef:e.contentRef},E,{className:{base:function(e){var a=e.isMobile||e.modalVerticalCenter?"modal-dialog":"modal-dialog modal-dialog-centered";return e.cssClass&&e.cssClass.modalDialog&&(a+=" "+e.cssClass.modalDialog.trim()),a}(e),afterOpen:"",beforeClose:""},overlayClassName:{base:"modal-backdrop"+(e.cssClass&&e.cssClass.overlayClassName?e.cssClass.overlayClassName:""),afterOpen:"",beforeClose:""},contentLabel:e.popupDescription||""}),o.default.createElement("div",{className:h,"aria-modal":!0,id:e.modalContentId||"modal-content-block"},f,e.children,p,e.isMobile&&v))}c.propTypes={isOpen:r.default.bool.isRequired,closeModalIcon:r.default.bool,closeModal:r.default.func,btnPrimaryLabel:r.default.string,btnSecondaryLabel:r.default.string,cssClass:r.default.object,onShow:r.default.func,OverlayClick:r.default.func,onPrimaryClick:r.default.func,onSecondaryClick:r.default.func,hasFooter:r.default.bool,hasHeader:r.default.bool}},function(e,a){e.exports=__webpack_require__(0)},function(e,a){e.exports=__webpack_require__(2)},function(e,a){e.exports=__webpack_require__(253)}]);
+module.exports=function(e){var a={};function s(t){if(a[t])return a[t].exports;var l=a[t]={i:t,l:!1,exports:{}};return e[t].call(l.exports,l,l.exports,s),l.l=!0,l.exports}return s.m=e,s.c=a,s.d=function(e,a,t){s.o(e,a)||Object.defineProperty(e,a,{configurable:!1,enumerable:!0,get:t})},s.n=function(e){var a=e&&e.__esModule?function(){return e.default}:function(){return e};return s.d(a,"a",a),a},s.o=function(e,a){return Object.prototype.hasOwnProperty.call(e,a)},s.p="",s(s.s=0)}([function(e,a,s){"use strict";Object.defineProperty(a,"__esModule",{value:!0});var t=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var s=arguments[a];for(var t in s)Object.prototype.hasOwnProperty.call(s,t)&&(e[t]=s[t])}return e};a.default=c;var l=s(1),o=d(l),r=d(s(2)),n=d(s(3));function d(e){return e&&e.__esModule?e:{default:e}}function c(e){var a="";e.title&&(a=o.default.createElement("h2",{className:"modal-title h4",id:e.modalHeaderTitleId,dangerouslySetInnerHTML:{__html:e.title}}));var s=e.isMobile?e.isEuropass?"btn ":"btn btn-lg":"btn btn-sm";e.cssClass&&e.cssClass.btnPrimary&&(s+=" "+e.cssClass.btnPrimary.trim()),e.showFileNameBox&&e.docFileNameError&&(s+=" disabled");var r={type:"submit",onClick:e.onPrimaryClick,className:s};e.primaryDisabled&&(r=t({},r,{disabled:e.primaryDisabled})),e.btnPrimaryId&&(r=t({},r,{id:e.btnPrimaryId}));var d="";e.btnPrimaryLabel&&(e.addWrkExpButtonId&&(r.id=e.addWrkExpButtonId),d=o.default.createElement("button",t({},r,{id:r.id||e.btnPrimaryId||"modal-btn-primary"}),function(e){return e.isCTALoaderEnabled?o.default.createElement(l.Fragment,null,o.default.createElement("span",{className:e.cssClass.btnPrimaryLoaderLabelClass||""},e.btnPrimaryLabel),e.CTALoaderJsx):o.default.createElement(l.Fragment,null,e.btnPrimaryLabel)}(e)));var c="";if(e.btnSecondaryLabel){var i=e.cssClass&&e.cssClass.btnSecondary?"btn btn-sm "+e.cssClass.btnSecondary:"btn ",u=e.cssClass&&e.cssClass.btnSecondary?(e.isEuropass?"btn btn-sm ":"btn btn-lg ")+e.cssClass.btnSecondary:"btn ";r={type:"button",onClick:e.onSecondaryClick,className:e.isMobile?u:i},e.secondaryDisabled&&(r=t({},r,{disabled:e.secondaryDisabled})),e.continueToEducButtonId&&(r.id=e.continueToEducButtonId),c=o.default.createElement("button",t({},r,{id:e.btnSecondaryId||"modal-btn-secondary"}),e.btnSecondaryLabel)}var m="modal-header";e.cssClass&&e.cssClass.modalHeader&&(m+=" "+e.cssClass.modalHeader.trim());var b=e.cssClass.headerIconClassName,f=o.default.createElement("div",{className:m,id:e.modalHeaderId||"modal-header-block"},e.isHeaderIcon&&o.default.createElement("i",{className:"icon-header "+(b||"")}),a,e.closeModal&&!e.hideCloseIcon&&o.default.createElement("button",{type:"button",onClick:function(a){return e.closeModal(a,!0)},className:"close","data-dismiss":"modal","aria-label":"Close"},o.default.createElement("i",{className:"icon-close-modal icon-close","aria-hidden":"true"})));0==e.hasHeader&&(f="");var C="modal-footer ";e.cssClass&&e.cssClass.modalFooter&&(C+=" "+e.cssClass.modalFooter.trim());var p="";p=e.footerBtnSwap?o.default.createElement("div",{className:C},c,d,e.isFooterLinkText):o.default.createElement("div",{className:C},d,c,e.isFooterLinkText);var y="footer-icon";e.cssClass&&e.cssClass.modalFooterIcon&&(y+=" "+e.cssClass.modalFooterIcon.trim());var v=o.default.createElement("div",{className:y});0==e.hasFooterIcon&&(v=""),0==e.hasFooter&&(p="");var h="modal-content";e.cssClass&&e.cssClass.modalContent&&(h+=" "+e.cssClass.modalContent.trim());var E={};return e.parentSelector&&(E.parentSelector=e.parentSelector),o.default.createElement(n.default,t({isOpen:e.isOpen,onAfterOpen:e.onShow,shouldCloseOnOverlayClick:e.shouldCloseOnOverlayClick||!1,ariaHideApp:!1,onRequestClose:e.closeModal,shouldCloseOnEsc:e.shouldCloseOnEsc,contentRef:e.contentRef},E,{className:{base:function(e){var a=e.isMobile||e.modalVerticalCenter?"modal-dialog":"modal-dialog modal-dialog-centered";return e.cssClass&&e.cssClass.modalDialog&&(a+=" "+e.cssClass.modalDialog.trim()),a}(e),afterOpen:"",beforeClose:""},overlayClassName:{base:"modal-backdrop"+(e.cssClass&&e.cssClass.overlayClassName?e.cssClass.overlayClassName:""),afterOpen:"",beforeClose:""},contentLabel:e.popupDescription||""}),o.default.createElement("div",{className:h,"aria-modal":!0,id:e.modalContentId||"modal-content-block"},f,e.children,p,e.isMobile&&v))}c.propTypes={isOpen:r.default.bool.isRequired,closeModalIcon:r.default.bool,closeModal:r.default.func,btnPrimaryLabel:r.default.string,btnSecondaryLabel:r.default.string,cssClass:r.default.object,onShow:r.default.func,OverlayClick:r.default.func,onPrimaryClick:r.default.func,onSecondaryClick:r.default.func,hasFooter:r.default.bool,hasHeader:r.default.bool}},function(e,a){e.exports=__webpack_require__(0)},function(e,a){e.exports=__webpack_require__(2)},function(e,a){e.exports=__webpack_require__(255)}]);
 
 /***/ }),
 
-/***/ 196:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -157,7 +157,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.canUseDOM = exports.SafeNodeList = exports.SafeHTMLCollection = undefined;
 
-var _exenv = __webpack_require__(348);
+var _exenv = __webpack_require__(350);
 
 var _exenv2 = _interopRequireDefault(_exenv);
 
@@ -177,7 +177,7 @@ exports.default = SafeHTMLElement;
 
 /***/ }),
 
-/***/ 220:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -345,7 +345,7 @@ function polyfill(Component) {
 
 /***/ }),
 
-/***/ 250:
+/***/ 252:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -390,8 +390,13 @@ function hidesContents(element) {
 
 function visible(element) {
   var parentElement = element;
+  var rootNode = element.getRootNode && element.getRootNode();
   while (parentElement) {
     if (parentElement === document.body) break;
+
+    // if we are not hidden yet, skip to checking outside the Web Component
+    if (rootNode && parentElement === rootNode) parentElement = rootNode.host.parentNode;
+
     if (hidesContents(parentElement)) return false;
     parentElement = parentElement.parentNode;
   }
@@ -412,13 +417,16 @@ function tabbable(element) {
 }
 
 function findTabbableDescendants(element) {
-  return [].slice.call(element.querySelectorAll("*"), 0).filter(tabbable);
+  var descendants = [].slice.call(element.querySelectorAll("*"), 0).reduce(function (finished, el) {
+    return finished.concat(!el.shadowRoot ? [el] : findTabbableDescendants(el.shadowRoot));
+  }, []);
+  return descendants.filter(tabbable);
 }
 module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 251:
+/***/ 253:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -440,7 +448,7 @@ var _warning = __webpack_require__(5);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _safeHTMLElement = __webpack_require__(196);
+var _safeHTMLElement = __webpack_require__(198);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -467,11 +475,12 @@ function resetState() {
 
 /* istanbul ignore next */
 function log() {
-  if (process.env.NODE_ENV === "production") return;
-  var check = globalElement || {};
-  console.log("ariaAppHider ----------");
-  console.log(check.nodeName, check.className, check.id);
-  console.log("end ariaAppHider ----------");
+  if (process.env.NODE_ENV !== "production") {
+    var check = globalElement || {};
+    console.log("ariaAppHider ----------");
+    console.log(check.nodeName, check.className, check.id);
+    console.log("end ariaAppHider ----------");
+  }
 }
 /* eslint-enable no-console */
 
@@ -564,7 +573,7 @@ function documentNotReadyOrSSRTesting() {
 
 /***/ }),
 
-/***/ 252:
+/***/ 254:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -650,7 +659,7 @@ exports.default = portalOpenInstances;
 
 /***/ }),
 
-/***/ 253:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -660,7 +669,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Modal = __webpack_require__(344);
+var _Modal = __webpack_require__(346);
 
 var _Modal2 = _interopRequireDefault(_Modal);
 
@@ -671,7 +680,7 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 344:
+/***/ 346:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -698,19 +707,19 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _ModalPortal = __webpack_require__(345);
+var _ModalPortal = __webpack_require__(347);
 
 var _ModalPortal2 = _interopRequireDefault(_ModalPortal);
 
-var _ariaAppHider = __webpack_require__(251);
+var _ariaAppHider = __webpack_require__(253);
 
 var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-var _safeHTMLElement = __webpack_require__(196);
+var _safeHTMLElement = __webpack_require__(198);
 
 var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
-var _reactLifecyclesCompat = __webpack_require__(220);
+var _reactLifecyclesCompat = __webpack_require__(222);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -979,7 +988,7 @@ exports.default = Modal;
 
 /***/ }),
 
-/***/ 345:
+/***/ 347:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1001,31 +1010,31 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _focusManager = __webpack_require__(346);
+var _focusManager = __webpack_require__(348);
 
 var focusManager = _interopRequireWildcard(_focusManager);
 
-var _scopeTab = __webpack_require__(347);
+var _scopeTab = __webpack_require__(349);
 
 var _scopeTab2 = _interopRequireDefault(_scopeTab);
 
-var _ariaAppHider = __webpack_require__(251);
+var _ariaAppHider = __webpack_require__(253);
 
 var ariaAppHider = _interopRequireWildcard(_ariaAppHider);
 
-var _classList = __webpack_require__(349);
+var _classList = __webpack_require__(351);
 
 var classList = _interopRequireWildcard(_classList);
 
-var _safeHTMLElement = __webpack_require__(196);
+var _safeHTMLElement = __webpack_require__(198);
 
 var _safeHTMLElement2 = _interopRequireDefault(_safeHTMLElement);
 
-var _portalOpenInstances = __webpack_require__(252);
+var _portalOpenInstances = __webpack_require__(254);
 
 var _portalOpenInstances2 = _interopRequireDefault(_portalOpenInstances);
 
-__webpack_require__(350);
+__webpack_require__(352);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -1416,7 +1425,7 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 346:
+/***/ 348:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1435,7 +1444,7 @@ exports.popWithoutFocus = popWithoutFocus;
 exports.setupScopedFocus = setupScopedFocus;
 exports.teardownScopedFocus = teardownScopedFocus;
 
-var _tabbable = __webpack_require__(250);
+var _tabbable = __webpack_require__(252);
 
 var _tabbable2 = _interopRequireDefault(_tabbable);
 
@@ -1453,13 +1462,14 @@ function resetState() {
 
 /* istanbul ignore next */
 function log() {
-  if (process.env.NODE_ENV === "production") return;
-  console.log("focusManager ----------");
-  focusLaterElements.forEach(function (f) {
-    var check = f || {};
-    console.log(check.nodeName, check.className, check.id);
-  });
-  console.log("end focusManager ----------");
+  if (process.env.NODE_ENV !== "production") {
+    console.log("focusManager ----------");
+    focusLaterElements.forEach(function (f) {
+      var check = f || {};
+      console.log(check.nodeName, check.className, check.id);
+    });
+    console.log("end focusManager ----------");
+  }
 }
 /* eslint-enable no-console */
 
@@ -1540,7 +1550,7 @@ function teardownScopedFocus() {
 
 /***/ }),
 
-/***/ 347:
+/***/ 349:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1551,11 +1561,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = scopeTab;
 
-var _tabbable = __webpack_require__(250);
+var _tabbable = __webpack_require__(252);
 
 var _tabbable2 = _interopRequireDefault(_tabbable);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function getActiveElement() {
+  var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document;
+
+  return el.activeElement.shadowRoot ? getActiveElement(el.activeElement.shadowRoot) : el.activeElement;
+}
 
 function scopeTab(node, event) {
   var tabbable = (0, _tabbable2.default)(node);
@@ -1571,19 +1587,20 @@ function scopeTab(node, event) {
   var shiftKey = event.shiftKey;
   var head = tabbable[0];
   var tail = tabbable[tabbable.length - 1];
+  var activeElement = getActiveElement();
 
   // proceed with default browser behavior on tab.
   // Focus on last element on shift + tab.
-  if (node === document.activeElement) {
+  if (node === activeElement) {
     if (!shiftKey) return;
     target = tail;
   }
 
-  if (tail === document.activeElement && !shiftKey) {
+  if (tail === activeElement && !shiftKey) {
     target = head;
   }
 
-  if (head === document.activeElement && shiftKey) {
+  if (head === activeElement && shiftKey) {
     target = tail;
   }
 
@@ -1611,7 +1628,7 @@ function scopeTab(node, event) {
   // the focus
   if (!isSafariDesktop) return;
 
-  var x = tabbable.indexOf(document.activeElement);
+  var x = tabbable.indexOf(activeElement);
 
   if (x > -1) {
     x += shiftKey ? -1 : 1;
@@ -1636,7 +1653,7 @@ module.exports = exports["default"];
 
 /***/ }),
 
-/***/ 348:
+/***/ 350:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -1684,7 +1701,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 /***/ }),
 
-/***/ 349:
+/***/ 351:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1722,26 +1739,26 @@ function resetState() {
 
 /* istanbul ignore next */
 function log() {
-  if (process.env.NODE_ENV === "production") return;
+  if (process.env.NODE_ENV !== "production") {
+    var classes = document.getElementsByTagName("html")[0].className;
+    var buffer = "Show tracked classes:\n\n";
 
-  var classes = document.getElementsByTagName("html")[0].className;
-  var buffer = "Show tracked classes:\n\n";
+    buffer += "<html /> (" + classes + "):\n  ";
+    for (var x in htmlClassList) {
+      buffer += "  " + x + " " + htmlClassList[x] + "\n  ";
+    }
 
-  buffer += "<html /> (" + classes + "):\n";
-  for (var x in htmlClassList) {
-    buffer += "  " + x + " " + htmlClassList[x] + "\n";
+    classes = document.body.className;
+
+    buffer += "\n\ndoc.body (" + classes + "):\n  ";
+    for (var _x in docBodyClassList) {
+      buffer += "  " + _x + " " + docBodyClassList[_x] + "\n  ";
+    }
+
+    buffer += "\n";
+
+    console.log(buffer);
   }
-
-  classes = document.body.className;
-
-  buffer += "\n\ndoc.body (" + classes + "):\n";
-  for (var _x in docBodyClassList) {
-    buffer += "  " + _x + " " + docBodyClassList[_x] + "\n";
-  }
-
-  buffer += "\n";
-
-  console.log(buffer);
 }
 /* eslint-enable no-console */
 
@@ -1822,7 +1839,7 @@ var remove = exports.remove = function remove(element, classString) {
 
 /***/ }),
 
-/***/ 350:
+/***/ 352:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1834,7 +1851,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.resetState = resetState;
 exports.log = log;
 
-var _portalOpenInstances = __webpack_require__(252);
+var _portalOpenInstances = __webpack_require__(254);
 
 var _portalOpenInstances2 = _interopRequireDefault(_portalOpenInstances);
 

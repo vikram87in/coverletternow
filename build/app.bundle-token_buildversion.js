@@ -1774,8 +1774,8 @@ function getConfigUrl() {
 
 function isFeatureActive(featureCD) {
     var result = false;
-    var feature = RDL.lstFeatures.find(function (feature) { return feature.FeatureCD.toLowerCase() == featureCD.toLowerCase() });
-    if (feature && feature.IsActive.toLowerCase() == 'true') {
+    var feature = RDL.lstFeatures.find(function (feature) { return feature.featureCD.toLowerCase() == featureCD.toLowerCase() });
+    if (feature && feature.isActive) {
         result = true;
     }
     return result;
