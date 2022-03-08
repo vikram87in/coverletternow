@@ -1,0 +1,1335 @@
+<style>
+  @media (min-width:768px) {
+    html {
+      height: 100%;
+      font-size: 10px;
+    }
+
+    body.how-it-works-page {
+      color: #2e2e2e;
+      background: #f5f7f8 !important;
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-family: "Work Sans", sans-serif;
+      line-height: 1;
+      min-height: 100%;
+      -webkit-font-smoothing: subpixel-antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .how-it-works-page,
+    .how-it-works-page::before,
+    .how-it-works-page::after,
+    .how-it-works-page *,
+    .how-it-works-page *::before,
+    .how-it-works-page *::after {
+      box-sizing: border-box
+    }
+
+    .how-it-works-page article,
+    .how-it-works-page aside,
+    .how-it-works-page dialog,
+    .how-it-works-page figcaption,
+    .how-it-works-page figure,
+    .how-it-works-page footer,
+    .how-it-works-page header,
+    .how-it-works-page hgroup,
+    .how-it-works-page main,
+    .how-it-works-page nav,
+    .how-it-works-page section {
+      display: block;
+    }
+
+    .how-it-works-page,
+    .how-it-works-page * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body.how-it-works-page {
+      background: #fff !important;
+    }
+
+    .how-it-works-page,
+    .how-it-works-page * {
+      outline: 0 !important;
+    }
+
+
+
+    .how-it-works-page .d-none {
+      display: none !important;
+    }
+
+    .how-it-works-page .logo-wrap {
+      text-align: center;
+    }
+
+    .how-it-works-page .logo-wrap .animationLogo {
+      height: auto;
+      width: 150px;
+    }
+
+    .how-it-works-page img {
+      vertical-align: middle;
+      border-style: none;
+    }
+
+    /*animation*/
+    .how-it-works-page .loader-overlay {
+      background: #fff;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 9999999;
+      top: 0
+    }
+
+    .how-it-works-page .loader-wrapper {
+      width: 383px;
+      margin: auto;
+      position: fixed;
+      left: 0;
+      top: 31%;
+      right: 0;
+    }
+
+    .how-it-works-page .animation-fold {
+      margin: 20px auto 0;
+      overflow: hidden;
+      position: relative;
+      height: 105px
+    }
+
+    .how-it-works-page .loading {
+      font-family: "Work Sans", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #000;
+      position: relative;
+      -webkit-animation: Loader 7s forwards;
+      animation: Loader 7s 16s forwards;
+      animation-delay: 1s;
+      letter-spacing: .4px
+    }
+
+    .how-it-works-page .loading>div {
+      margin-bottom: 12px;
+      font-family: "Work Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 500
+    }
+
+    .how-it-works-page .loading div:first-child {
+      margin-top: 35px
+    }
+
+    .how-it-works-page .loading>div i {
+      font-size: 16px;
+      padding: 6px 6px;
+      font-style: normal;
+      margin-right: 15px;
+      background-color: #fff;
+      background-image: url(/build-letter/images/check-black-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%;
+      border: 1px solid #fced5b;
+      border-radius: 20px;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle
+    }
+
+    .how-it-works-page .gradient,
+    .how-it-works-page .top-content-hide {
+      position: absolute;
+      width: 100%
+    }
+
+    .how-it-works-page .loading .first {
+      animation-name: firstDiv;
+      animation-duration: 4s;
+      animation-delay: 0s
+    }
+
+    .how-it-works-page .loading .second {
+      animation-name: secondDiv;
+      animation-duration: 4s;
+      animation-delay: 1s
+    }
+
+    .how-it-works-page .loading .third {
+      animation-name: thirdDiv;
+      animation-duration: 4s;
+      animation-delay: 2s
+    }
+
+    .how-it-works-page .loading .four {
+      animation-name: fourDiv;
+      animation-duration: 4s;
+      animation-delay: 3s
+    }
+
+    .how-it-works-page .loading .five {
+      animation-name: fiveDiv;
+      animation-duration: 4s;
+      animation-delay: 4s
+    }
+
+    .how-it-works-page .loading .six {
+      animation-name: sixDiv;
+      animation-duration: 4s;
+      animation-delay: 4.5s
+    }
+
+    .how-it-works-page .loading .seven {
+      animation-name: sevenDiv;
+      animation-duration: 4s;
+      animation-delay: 5s
+    }
+
+    .how-it-works-page .loading .eight {
+      animation-name: eightDiv;
+      animation-duration: 4s;
+      animation-delay: 6s
+    }
+
+    .how-it-works-page .loading .nine {
+      animation-name: nineDiv;
+      animation-duration: 4s;
+      animation-delay: 7s
+    }
+
+    .how-it-works-page .top-content-hide {
+      background: #3d4c61;
+      top: 0;
+      z-index: 5;
+      height: 15px
+    }
+
+    .how-it-works-page .gradient {
+      height: 35px;
+      left: 0;
+      bottom: 0
+    }
+
+    .how-it-works-page .grad-top {
+      top: 0;
+      height: 50px;
+      z-index: 1;
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%)
+    }
+
+    .how-it-works-page .grad-bottom {
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%)
+    }
+
+    .how-it-works-page .onboarding-header {
+      padding: 28px 0 13px 0;
+    }
+
+    .how-it-works-page .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @keyframes Loader {
+    0% {
+      top: 0
+    }
+
+    11.11% {
+      top: -35.6px
+    }
+
+    22.2% {
+      top: -71.3px
+    }
+
+    33.33% {
+      top: -107px
+    }
+
+    44.44% {
+      top: -142px
+    }
+
+    55.55% {
+      top: -178px
+    }
+
+    66.66% {
+      top: -213.6px
+    }
+
+    77.77% {
+      top: -249.6px
+    }
+
+    88% {
+      top: -285.6px
+    }
+
+    100% {
+      top: -340.6px
+    }
+  }
+
+  @keyframes firstDiv {
+    0% {
+      background-color: #fced5b;
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes secondDiv {
+    22.2% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes thirdDiv {
+    33.33% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fourDiv {
+    44.44% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fiveDiv {
+    55.55% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sixDiv {
+    66.66% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sevenDiv {
+    77.77% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes eightDiv {
+    88.88% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes nineDiv {
+    95% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes tenDiv {
+    100% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+
+
+
+
+  @media (min-width: 576px) {
+    .how-it-works-page .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .how-it-works-page .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .how-it-works-page .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .how-it-works-page .container {
+      max-width: 1140px;
+    }
+  }
+
+  @media (min-width:768px) {
+    .how-it-works-page .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .how-it-works-page .col-7 {
+      flex: 0 0 58.33333%;
+      max-width: 58.33333%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .how-it-works-page .col-md-8 {
+      flex: 0 0 66.66667%;
+      max-width: 66.66667%;
+    }
+  }
+
+  @media (min-width:768px) {
+
+    .how-it-works-page .col-md-8,
+    .how-it-works-page .col-md-4 {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .how-it-works-page .mt-3,
+    .how-it-works-page .my-3 {
+      margin-top: 1rem !important;
+    }
+
+    .how-it-works-page .onboarding-header .mt-3,
+    .how-it-works-page .onboarding-header .mt-4 {
+      margin-top: 0 !important;
+    }
+
+    .how-it-works-page a:not([href]):not([tabindex]) {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .how-it-works-page a,
+    .how-it-works-page .link {
+      color: #005fb0;
+    }
+
+    .how-it-works-page a {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .how-it-works-page a:hover,
+    .how-it-works-page a:focus {
+      color: #0056b3;
+    }
+
+    .how-it-works-page .onboarding-header .logo {
+      width: 160px;
+      margin-top: 0;
+    }
+
+    .how-it-works-page a img {
+      border: none;
+    }
+
+    .how-it-works-page img {
+      vertical-align: middle;
+      border-style: none;
+    }
+
+    .how-it-works-page .text-right {
+      text-align: right !important;
+    }
+
+    .how-it-works-page .col-5 {
+      flex: 0 0 41.66667%;
+      max-width: 41.66667%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .how-it-works-page .col-md-4 {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .how-it-works-page .onboarding-header .text-contact {
+      color: #2e2e2e;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .how-it-works-page .text-uppercase {
+      text-transform: uppercase !important;
+    }
+
+    .how-it-works-page .icon-light-email {
+      display: none
+    }
+  }
+
+  @media (min-width: 576px) {
+    .how-it-works-page .jumbotron {
+      padding: 4rem 2rem;
+    }
+  }
+
+  @media (min-width:768px) {
+    .how-it-works-page .jumbotron {
+      padding: 0;
+      background: #fff;
+    }
+
+    .how-it-works-page .page-title {
+      margin-bottom: 20px;
+    }
+
+    .how-it-works-page h1,
+    .how-it-works-page .h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+    }
+
+    .how-it-works-page .page-title .p-title {
+      font-size: 48px;
+      margin-top: 22px;
+      color: #2e2e2e;
+      line-height: 1.2;
+    }
+
+    .how-it-works-page h1,
+    .how-it-works-page .h1,
+    .how-it-works-page h2,
+    .how-it-works-page .h2,
+    .how-it-works-page h3,
+    .how-it-works-page .h3,
+    .how-it-works-page h4,
+    .how-it-works-page .h4,
+    .how-it-works-page h5,
+    .how-it-works-page .h5,
+    .how-it-works-page h6,
+    .how-it-works-page .h6 {
+      color: #464c50;
+      margin-bottom: 0;
+      font-family: "Work Sans", sans-serif;
+    }
+
+    .how-it-works-page .text-center {
+      text-align: center !important;
+    }
+
+    .how-it-works-page .step-group {
+      background: #f6f7f8;
+      margin: 68px 0 60px;
+      padding: 55px 0 42px;
+      width: 100%;
+      position: relative;
+      display: table;
+    }
+
+    .how-it-works-page .step-item {
+      text-align: center;
+      display: table-cell;
+      width: 33.9%;
+    }
+
+    .how-it-works-page .steps-hiw-1,
+    .how-it-works-page .steps-hiw-2,
+    .how-it-works-page .steps-hiw-3 {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      height: 84px;
+      width: 96px;
+    }
+
+    .how-it-works-page .count-hiw {
+      font-size: 1.7rem;
+      font-weight: 600;
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+    }
+
+    .how-it-works-page .svg-hiw {
+      padding-left: 20px;
+    }
+
+    .how-it-works-page .svg-hiw-1 {
+      padding-left: 14px;
+    }
+
+    .how-it-works-page svg:not(:root) {
+      overflow: hidden;
+    }
+
+    .how-it-works-page p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .how-it-works-page .step-title {
+      font-size: 1.7rem;
+      font-weight: 500;
+      line-height: 2.5rem;
+      padding-top: 40px;
+      max-width: 245px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .how-it-works-page .steps-hiw-2 {
+      width: 98px;
+      position: relative;
+    }
+
+    .how-it-works-page .steps-hiw-2 .thick-border-left,
+    .how-it-works-page .steps-hiw-2 .thick-border-right {
+      height: 2px;
+      overflow: hidden;
+      position: absolute;
+      right: calc(100% + 45px);
+      top: 58px;
+      width: 170px;
+      z-index: 1;
+    }
+
+    .how-it-works-page .steps-hiw-2 .thick-border-left i,
+    .how-it-works-page .steps-hiw-2 .thick-border-right i {
+      background: #7b7b7c;
+      float: left;
+      margin-right: 5px;
+      height: 2px;
+      width: 12px;
+    }
+
+    .how-it-works-page .clearfix::after {
+      display: block;
+      clear: both;
+      content: "";
+    }
+
+    .how-it-works-page .steps-hiw-2 .thick-border-right {
+      right: auto;
+      left: calc(100% + 45px);
+    }
+
+    .how-it-works-page .steps-hiw-2 .thick-border-left i,
+    .how-it-works-page .steps-hiw-2 .thick-border-right i {
+      background: #7b7b7c;
+      float: left;
+      margin-right: 5px;
+      height: 2px;
+      width: 12px;
+    }
+
+    .how-it-works-page .steps-hiw-3 {
+      height: 85px;
+      width: 103px;
+    }
+
+    .how-it-works-page .how-it-works-contents .btn-lg {
+      width: 388px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      min-height: 53px;
+    }
+
+    .how-it-works-page .btn:not(:disabled):not(.disabled) {
+      cursor: pointer;
+    }
+
+    .how-it-works-page .btn {
+      font-size: 1.4rem;
+      font-weight: 600;
+      font-family: "Work Sans", sans-serif;
+      text-transform: uppercase;
+      line-height: 1.8rem;
+      letter-spacing: 0;
+      min-width: 135px;
+      padding: 1.5rem 1rem;
+      -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      -moz-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .how-it-works-page .btn {
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      border: 1px solid transparent;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      border-radius: 0.25rem;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .how-it-works-page .btn-primary {
+      background-color: #fbec5c;
+      border-color: #fbec5c;
+      min-width: 195px;
+      color: #2e2e2e;
+      border-radius: 0;
+    }
+
+    .how-it-works-page .btn-primary:hover,
+    .how-it-works-page .btn-primary:focus,
+    .how-it-works-page .btn-primary.focus,
+    .how-it-works-page .btn-primary.disabled,
+    .how-it-works-page .btn-primary:disabled,
+    .how-it-works-page .btn-primary:not([disabled]):not(.disabled):active,
+    .how-it-works-page .btn-primary:not([disabled]):not(.disabled).active,
+    .how-it-works-page .btn-primary.show>.btn-primary.dropdown-toggle {
+      background-color: #fdf175;
+      border-color: #fdf175;
+      color: #2e2e2e;
+    }
+
+    .how-it-works-page .how-it-works-contents .hiw-terms-privacy {
+      color: #000;
+      font-size: 1.2rem;
+      margin: 20px 0;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .how-it-works-page .how-it-works-contents .hiw-terms-privacy {
+      margin: 20px 0 35px;
+    }
+  }
+
+  @media (min-width:768px) {
+    .how-it-works-page .footer {
+      background-color: #fff;
+    }
+
+    .how-it-works-page .primary-footer {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: row;
+      padding: 5.2rem 0 6.5rem;
+      justify-content: space-between;
+    }
+
+    .how-it-works-page .how-it-works-page .primary-footer {
+      padding-right: 0;
+    }
+
+    .how-it-works-page .list-inline {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+
+    .how-it-works-page .list-inline {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .how-it-works-page ul,
+    .how-it-works-page li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .how-it-works-page .list-separator .list-item:first-child .list-link {
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .how-it-works-page .list-inline .list-link {
+      color: #2e2e2e;
+      padding: 0 2rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      border-left: 1px solid #2e2e2e;
+    }
+
+    .how-it-works-page a:hover,
+    .how-it-works-page a:focus {
+      text-decoration: none;
+    }
+
+    .how-it-works-page .list-inline .list-item:last-child .list-link {
+      padding-right: 0;
+    }
+
+    .how-it-works-page .copyright-wrapper {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      margin-top: 0;
+    }
+
+    .how-it-works-page .copyright-wrapper .copyright {
+      color: #2e2e2e;
+      font-size: 1.2rem;
+    }
+
+    .how-it-works-page .float-left {
+      float: left !important;
+    }
+  }
+
+
+
+
+  @media screen and (max-width: 1199px) {
+
+    .how-it-works-page .steps-hiw-2 .thick-border-left,
+    .how-it-works-page .steps-hiw-2 .thick-border-right {
+      width: 125px;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    .how-it-works-page .steps-hiw-2 .thick-border-left {
+      right: calc(100% + 25px);
+    }
+
+    .how-it-works-page .steps-hiw-2 .thick-border-left,
+    .how-it-works-page .steps-hiw-2 .thick-border-right {
+      width: 60px;
+    }
+
+    .how-it-works-page .list-inline .list-link {
+      padding: 0 0.2rem;
+    }
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+  .clb-global-loader-overlay {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999
+  }
+
+  .clb-global-loader-overlay .clb-global-loader-wrapper {
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    height: 55px;
+    position: fixed;
+    width: 222px;
+    right: 2.6rem;
+    bottom: 1.9rem;
+    z-index: 99999
+  }
+
+  .spinner-circle {
+    position: relative;
+    margin: 18px auto 0 18px;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to right, #89D6EC 50%, rgba(46, 46, 46, 0) 80%);
+    border-radius: 100%;
+    animation: spin 1s infinite linear
+  }
+
+  .clb-global-loader-overlay .clb-global-loader-wrapper .loader-text {
+    color: #2e2e2e;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    padding: 22px 0 12px 49px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Work Sans", sans-serif;
+    line-height: 1
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
+  @-webkit-keyframes spin {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+</style>
+<main class="how-it-works-contents d-none" id="howItWorks">
+  <header class="onboarding-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-7">
+          <a class="mt-3"><img src="/blobcontent/clb/cln/images/cover-letter-logo-jt.svg" alt="cover-letter-logo"
+              class="logo"></a>
+        </div>
+        <div class="col-md-4 text-right mt-4 col-5">
+          <a href="javascript:void(0)" id="contact-us-link" class="text-contact text-uppercase "
+            onclick="openContactUsPage(true)"><i class="icon-sprite icon-light-email float-left"></i>Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="jumbotron">
+      <div class="jumbotron-header">
+        <div class="page-title">
+          <h1 class="h1 p-title text-center">How to Create a Job-Winning Cover Letter</h1>
+        </div>
+      </div>
+      <div class="jumbotron-body">
+        <div class="step-group">
+          <div class="step-item">
+            <span class="steps-hiw-1">
+              <span class="count-hiw count-hiw-1">1</span>
+              <span class="svg-hiw svg-hiw-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="76" height="84" viewBox="0 0 76 84" fill="#89d6ec">
+                  <g>
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M0 9h54v75H0z"></path>
+                        </g>
+                      </g>
+                      <g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M63 33v0l-.15-32v0H8.97v73.842L63 75v0-11 0"></path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 16.354h29.292"></path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 23.314h29.292"></path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 30.534h29.155"></path>
+                        </g>
+                        <g>
+                          <g>
+                            <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                              d="M50.11 54.92v0l-5.1 13.414v0l4.979-.561v0l3.237 3.685v0l4.986-13.113v0">
+                            </path>
+                          </g>
+                          <g>
+                            <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                              d="M69.022 54.92v0l5.1 13.414v0l-4.979-.561v0l-3.237 3.685v0L60.92 58.345v0">
+                            </path>
+                          </g>
+                          <g>
+                            <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                              d="M63.333 33.086v0l5.212-.743v0l.915 5.185v0l4.654 2.461v0l-2.307 4.733v0l2.318 4.728v0l-4.647 2.473v0l-.904 5.186v0l-5.214-.732v0l-3.78 3.665v0l-3.787-3.655v0l-5.213.743v0l-.915-5.185v0l-4.654-2.462v0l2.307-4.732v0L45 40.024v0l4.648-2.473v0l.904-5.187v0l5.213.732v0l3.78-3.666v0z">
+                            </path>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+            </span>
+            <p class="step-title">Choose a professionally designed template</p>
+          </div>
+
+          <div class="step-item">
+            <span class="steps-hiw-2">
+              <span class="count-hiw count-hiw-2">2</span>
+              <span class="svg-hiw svg-hiw-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="78" height="84" viewBox="0 0 78 84" fill="#a2d7ce">
+                  <g>
+                    <g>
+                      <g>
+                        <g>
+                          <path d="M0 9h54v75H0z"></path>
+                        </g>
+                      </g>
+                      <g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M62.85 34.517v0V1v0H8.97v73.842h53.88v0V62.9v0">
+                          </path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M76.796 48.736c0 7.79-6.314 14.105-14.102 14.105-7.789 0-14.104-6.315-14.104-14.105S54.905 34.63 62.694 34.63c7.788 0 14.102 6.315 14.102 14.106z">
+                          </path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 16.354h29.292"></path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 23.314h29.292"></path>
+                        </g>
+                        <g>
+                          <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                            d="M21.68 30.534h29.155"></path>
+                        </g>
+                      </g>
+                      <g>
+                        <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                          d="M62.604 41.44v14.606"></path>
+                      </g>
+                      <g>
+                        <path fill="none" stroke="#2e2e2e" stroke-miterlimit="50" stroke-width="1.5"
+                          d="M69.756 48.744H55.64"></path>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </span>
+              <span
+                class="thick-border-left clearfix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              <span
+                class="thick-border-right clearfix"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+            <p class="step-title">Fill out each section using our expert suggestions</p>
+
+          </div>
+
+          <div class="step-item">
+            <span class="steps-hiw-3">
+              <span class="count-hiw count-hiw-3">3</span>
+              <span class="svg-hiw svg-hiw-3">
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="83" height="84" viewBox="0 0 83 84">
+                <g>
+                  <g>
+                    <g>
+                      <g>
+                        <path fill="#476b8a" d="M0 84.001h56.77V9.06H0z"></path>
+                      </g>
+                      <g>
+                        <path fill="none" stroke="#2e2e2e" stroke-miterlimit="20" stroke-width="1.5"
+                          d="M66.64 37.434v0V1v0H9.87v74.941h56.77v-9.158"></path>
+                      </g>
+                      <g>
+                        <path fill="none" stroke="#2e2e2e" stroke-linejoin="round" stroke-miterlimit="20"
+                          stroke-width="1.5" d="M18.41 67.292h23.037"></path>
+                      </g>
+                      <g>
+                        <path fill="none" stroke="#2e2e2e" stroke-linejoin="round" stroke-miterlimit="20"
+                          stroke-width="1.5" d="M18.41 61.532h18.1"></path>
+                      </g>
+                    </g>
+                    <g>
+                      <path fill="none" stroke="#2e2e2e" stroke-miterlimit="20" stroke-width="1.5"
+                        d="M78.64 55.262a12.138 12.138 0 0 1-1.614 3.9l2.308 2.309-3.746 3.75-2.308-2.311a12.096 12.096 0 0 1-3.895 1.616v3.265h-5.297v-3.265a12.095 12.095 0 0 1-3.896-1.616l-2.307 2.31-3.746-3.75 2.308-2.309a12.12 12.12 0 0 1-1.614-3.899H51.57V49.96h3.263c.31-1.407.864-2.721 1.614-3.899l-2.308-2.31 3.746-3.749 2.307 2.31a12.135 12.135 0 0 1 3.896-1.616V37.43h5.297v3.266c1.405.312 2.719.865 3.895 1.615l2.308-2.309 3.746 3.749-2.308 2.31a12.13 12.13 0 0 1 1.614 3.9h3.263v5.301zm-4.341-2.65a7.556 7.556 0 0 0-7.558-7.558 7.556 7.556 0 1 0 0 15.114A7.557 7.557 0 0 0 74.3 52.61z">
+                      </path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <p class="step-title" id="thirdStepHiw">Tailor your cover letter with a few clicks for
+              any job</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="jumbotron-footer text-center">
+        <button id="btnGetStarted" class="btn btn-primary btn-lg" onclick="onHIWContinue()">Get
+          Started</button>
+        <p class="hiw-terms-privacy" id="hiw_terms_privacy">
+          By clicking get started, you agree to our
+          <a id="term-of-use-link" class="link" href="javascript:void(0)" onclick="openTermsOfUse()">
+            Terms of Use
+          </a>
+          and
+          <a id="privacy-policy-link" class="link" href="javascript:void(0)" onclick="openPrivacyPolicy()">
+            Privacy Policy
+          </a>.
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="primary-footer">
+        <ul class="list-inline list-separator footer-nav">
+          <li class="list-item"><a href="javascript:void(0)" id="hiwlinkTnC" class="list-link"
+              onclick="openTermsOfUse()" title="Terms and Conditions">Terms &amp; Conditions</a>
+          </li>
+          <li class="list-item"><a href="javascript:void(0)" id="hiwlinkPrivacyPolicy" class="list-link"
+              onclick="openPrivacyPolicy()" title="Privacy Policy">Privacy
+              Policy</a></li>
+          <li class="list-item"><a href="javascript:void(0)" id="hiwlinkContactUs" class="list-link"
+              onclick="openContactUsPage()" title="Contact Us">Contact Us</a></li>
+          <li class="list-item"><a href="https://www.resume-now.com/accessibility" id="hiwlinkAccessibility"
+              class="list-link" target="_blank" title="Accessibility">Accessibility</a></li>
+        </ul>
+        <div class="copyright-wrapper">
+          <p class="copyright">© 2022, NOW Limited. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+<section id="hiwSpinningLoader" class="clb-global-loader-overlay d-none">
+  <section class="clb-global-loader-wrapper clearfix">
+    <div class="spinner-circle float-left">
+      <div class="spinner-circle-gradient"></div>
+      <div class="spinner-circle-inner"></div>
+    </div>
+    <p class="loader-text">Loading, please wait...</p>
+  </section>
+</section>
+
+
+<script type="text/javascript">
+  var isMobile = "False".toLowerCase() == "true";
+  function getQueryString(field) {
+    var href = window.location.href;
+    var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+    var string = reg.exec(href);
+    return string ? string[1] : '';
+  }
+
+  function readLS(key) {
+    var valString = window.localStorage && window.localStorage.getItem(key);
+    if (valString) {
+      return valString;
+    }
+    else {
+      return null;
+    }
+  }
+
+  function createLS(key, val) {
+    if (window.localStorage && key) {
+      window.localStorage.setItem(key, val);
+    }
+  }
+
+  function skipHIWpage() {
+    if (isMobile) {
+      if (readLS("showHiwExperiment")) {
+        return false;
+      }
+      else {
+        window.RDL.conductBBFMobileExpOnLoad = true;
+        return true;
+      }
+    }
+    else if (getQueryString("createnew") == 1 || getQueryString("docid") || getQueryString("skincd") || getQueryString("resign") == 1
+      || getQueryString("utm_term").toLowerCase() == "subscribers" || getQueryString("utm_term").toLowerCase() == "registered-users") {
+      return true;
+    }
+    return false;
+  }
+
+  function onHIWContinue() {
+    RDL.isTOSPPAceepted = true;
+    var event;
+    if (typeof (Event) === 'function') {
+      event = new Event('tosppaceeptedonhiw');
+    } else {
+      event = document.createEvent('Event');
+      event.initEvent('tosppaceeptedonhiw', true, true);
+    }
+
+    window.dispatchEvent(event);
+    // window.dispatchEvent(new Event("tosppaceeptedonhiw"));
+    if (isMobile && window.RDL.conductBBFMobileOnHIWClick) {
+      document.getElementById("hiwSpinningLoader") && document.getElementById("hiwSpinningLoader").classList.remove("d-none");
+    }
+    RDL.onHIWContinue && RDL.onHIWContinue();
+    hideHIWPage(0, true);
+    var terms_privacy_text = document.getElementById("hiw_terms_privacy");
+    terms_privacy_text && terms_privacy_text.parentNode.removeChild(terms_privacy_text);
+  }
+
+  function openContactUsPage(fireClickEvent) {
+    window.open(window.RDL.Paths.ContactUsUrl, '_blank');
+    if (fireClickEvent) {
+      fireContactClickEvent();
+    }
+  }
+
+  function openTermsOfUse() {
+    window.open(window.RDL.Paths.termsOfUseURL, '_blank');
+  }
+
+  function openPrivacyPolicy() {
+    window.open(window.RDL.Paths.privacyURL, '_blank');
+  }
+
+  function createCookie(name, value, days) {
+    var expires = "";
+    var requestingDomain = location.hostname.split('.').reverse()[1] + "." + location.hostname.split('.').reverse()[0];
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    } else
+      expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/;domain=." + requestingDomain;
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  function fireContactClickEvent() {
+    if (RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL && RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL && RDL.objClaims && RDL.objClaims.role == "User") || false;
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "clicked",
+        "screen name": "how it works",
+        "click option": "contact us",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+    }
+  }
+
+  function showHIWPage(fireViewEvent) {
+    var howItWorksElement = document.getElementById("howItWorks");
+    if (howItWorksElement) {
+      howItWorksElement.classList.remove("d-none");
+    }
+    document.getElementById("app").classList.add("d-none");
+    createLS("showingHIW", "1");
+    document.body.classList.add("how-it-works-page");
+    //fire viewed event
+    fireViewEvent && fireHIWViewedEvent();
+    var isTOSPPAgreed = RDL.readLS && RDL.IS_TOS_PP_AGREED && !!RDL.readLS(RDL.IS_TOS_PP_AGREED);
+    if (isTOSPPAgreed) {
+      var terms_privacy_text = document.getElementById("hiw_terms_privacy");
+      terms_privacy_text && terms_privacy_text.parentNode.removeChild(terms_privacy_text);
+    }
+  }
+
+  function fireHIWViewedEvent() {
+    if (RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL.objClaims && RDL.objClaims.role == "User") || false;
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "viewed",
+        "screen name": "how it works",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+    }
+  }
+
+  function hideHIWPage(cookieVal, fireClickEvent) {
+    document.getElementById("app").classList.remove("d-none");
+    var howItWorksElement = document.getElementById("howItWorks");
+    if (howItWorksElement) {
+      howItWorksElement.classList.add("d-none");
+    }
+    createLS("showingHIW", cookieVal.toString());
+    document.body.classList.remove("how-it-works-page");
+
+    if (fireClickEvent && RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL && RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL && RDL.objClaims && RDL.objClaims.role == "User") || false;
+      //fire clicked event
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "clicked",
+        "screen name": "how it works",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+      if (!isMobile) {
+        //fire choose template viewed event
+        RDL.TrackEvents("builder usage", {
+          "builder type": "cover letters",
+          "action": "viewed",
+          "screen name": "choose template",
+          "flow name": "cover letter v2 react"
+        }, userId, isLoggedInUser.toString().toUpperCase());
+      }
+    }
+  }
+
+  function removeHIWPage() {
+    var elem = document.getElementById('howItWorks');
+    elem && elem.parentNode.removeChild(elem);
+    hideHIWPage(-1);
+  }
+
+  function experimentRelatedProcessing() {
+    if (isMobile && readLS("showHiwExperiment")) {
+      window.RDL.conductBBFMobileOnHIWClick = true;
+      if (typeof hideloadingAnimation == 'function') {
+        hideloadingAnimation();
+      }
+    }
+    else {
+      document.getElementById("hiwSpinningLoader") && document.getElementById("hiwSpinningLoader").classList.remove("d-none");
+    }
+  }
+
+  window.addEventListener("load", function () {
+    document.getElementById("app").classList.add("d-none");
+
+    var cookie_ShowingHIW = readLS("showingHIW"); // 1: HIW page visible; 0: HIW page hidden; -1: HIW page removed from the dom.
+    var skipHIW = skipHIWpage();
+    if (skipHIW || cookie_ShowingHIW == -1) {
+      removeHIWPage();
+    }
+    else if (cookie_ShowingHIW && cookie_ShowingHIW != 1) {
+      hideHIWPage(0);
+    }
+    else {
+      showHIWPage();
+      experimentRelatedProcessing();
+    }
+  });
+
+</script>

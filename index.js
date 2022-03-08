@@ -6,7 +6,7 @@ app.set('view engine', 'ejs');
 
 
 app.get(/\/[^.]*/, (req, res) => {
-    res.render('index', { title: 'Node: Cover Letter Now' });
+    res.render('index', { title: 'Node: Cover Letter Now', isShowHowItWorks: true });
 })
 
 app.listen(PORT, () => console.log(`Express server started at http://localhost:${PORT}`));      
