@@ -21,10 +21,32 @@ async function getFeaturesList() {
 function getPortalSettings(hostname) {
   const dataObj = {};
   if (hostname.includes('cover-letter-now')) {
-
-    dataObj.baseProductPath = "clb";
-    dataObj.baseUrl = "/blobcontent/";
-    dataObj.isJoshuaTree = true;
+    dataObj.docTypeProp = 'html';
+    dataObj.culture = 'en';
+    dataObj.pageTitle = 'Cover Letter Now (Node)';
+    dataObj.isMobile = false;
+    dataObj.blobBaseUrl = '/blobcontent/';
+    dataObj.urlDirectory = '/build-letter';
+    dataObj.IsFinalizeTestBed = true;
+    dataObj.jsBundleScript = '/build-letter/build/developer.bundle-token_buildversion.js';
+    dataObj.isLoadSansProWithRobotoSlab = false;
+    dataObj.isLoadWorkSans = true;
+    dataObj.isLoadMontserrat = false;
+    dataObj.bootstrapBundleUrl = '/build-letter/build/stylesheets/bootstrap/cln/bootstrap.css';
+    dataObj.cssBundleUrl = '/build-letter/build/stylesheets/clnjt/main-token_buildversion.css';
+    dataObj.appJsScriptUrl = '/build-letter/build/app.bundle-token_buildversion.js';
+    dataObj.baseProductPath = 'clb';
+    dataObj.bodyClass = '';
+    dataObj.commonLoginUrl = 'https://qa-accounts.cover-letter-now.com/'; //verify
+    dataObj.buildVersion = 'token_buildversion'; //get from config
+    dataObj.authCookieName = 'UserStatus'; //get from config CLBBLD_QUA_W_COR
+    dataObj.sourceAppCD = 'CLBBLD_QUA_W_COR'; //get from config 
+    dataObj.disableTestsScriptUrl = dataObj.urlDirectory + (dataObj.isMobile ? "/mobile" : "") + "/scripts/disableTestsScript.js?v=" + dataObj.buildVersion;
+    dataObj.isShowHowItWorks = true;
+    dataObj.bodyClass = '';
+    dataObj.baseUrl = '/blobcontent/';
+    dataObj.isJoshuaTree = true; //get from config
+    dataObj.unsupportedBrowserPath = '/information/unsupportedbrowsers'; // get from config
     dataObj.portalId = 14;
     dataObj.logoPath = dataObj.baseURL + dataObj.baseProductPath + "/cln/images/cover-letter-logo.svg";
     dataObj.favIconUrl = dataObj.baseUrl + dataObj.baseProductPath + "/cln/images/favicon.ico";
@@ -34,14 +56,32 @@ function getPortalSettings(hostname) {
     }
     dataObj.isSkipCache = true;
     dataObj.culture = "en";
-    // dataObj.portalDetails = new PortalDetails(portalCD: "cln", portalID: 14, isAccountsEnabled: true,
-    //   isOptionCall: Convert.ToBoolean(ConfigurationManager.AppSettings["AllowOptions_CLN"]), placeholderColorTxtColor: "#FF6600");
     dataObj.uiExperimentJSPath = "/ui-experimentation/cln/experiment.js";
-    dataObj.unsupportedBrowserPath = "/information/unsupportedbrowsers";
     dataObj.reactRoutes = desktopRoutes();
     dataObj.enableReactRoutes = true;
     dataObj.skipHistoryPushState = true;
+    dataObj.currentPortalDetails = currentPortalDetails('cln');
     return dataObj;
+  }
+}
+
+function currentPortalDetails(portalCD) {
+  if (portalCD == 'cln') {
+    return {
+      "portalCD": "cln",
+      "portalID": 14,
+      "culture": "en-US",
+      "isIntl": false,
+      "isAccLCEnabled": false,
+      "isAccountsEnabled": true,
+      "isOptionCall": true,
+      "placeholderColorTxtColor": "#FF6600",
+      "basePath": "",
+      "isCssScaling": false,
+      "iconHoverRightValue": null,
+      "SDSB": null,
+      "disableCustomGADimension": false
+    }
   }
 }
 

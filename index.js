@@ -9,8 +9,7 @@ app.set('view engine', 'ejs');
 
 app.get(/\/[^.]*/, async (req, res) => {
     const data = await getStaticData(req.hostname);
-    // res.json({ "name": "vikram" });
-    res.render('index', { title: 'Node: Cover Letter Now', isShowHowItWorks: true, data: data });
+    res.render('index', { data: data });
 })
 
 app.listen(PORT, () => console.log(`Express server started at http://localhost:${PORT}`));      
