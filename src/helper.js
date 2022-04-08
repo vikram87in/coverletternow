@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
+const localization = require('./resource-files/resource.en-us.json');
 
 async function getStaticData(hostname) {
-  let dataObj = {};
-  dataObj = getPortalSettings(hostname);
+  let dataObj = getPortalSettings(hostname);
   dataObj.featureList = await getFeaturesList();
   return dataObj;
 }
@@ -61,8 +61,9 @@ function getPortalSettings(hostname) {
     dataObj.enableReactRoutes = true;
     dataObj.skipHistoryPushState = true;
     dataObj.currentPortalDetails = currentPortalDetails('cln');
-    return dataObj;
+    dataObj.localization = JSON.stringify(localization);
   }
+  return dataObj;
 }
 
 function currentPortalDetails(portalCD) {

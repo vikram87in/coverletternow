@@ -1,0 +1,1123 @@
+<% if (locals.data.isJoshuaTree && !locals.data.builderBasedLocalizedEnabled) { %>
+<% if (locals.data.isMobile) { %>
+<style>
+  .loader-overlay {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    top: 0
+  }
+
+  .loader-wrapper {
+    max-width: 383px;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    top: 31%;
+    right: 0;
+    padding: 0px 11px;
+  }
+
+  .animation-fold {
+    margin: 20px auto 0;
+    overflow: hidden;
+    position: relative;
+    height: 105px
+  }
+
+  .loading {
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    -webkit-animation: Loader 7s forwards;
+    animation: Loader 7s 16s forwards;
+    animation-delay: 1s;
+    letter-spacing: .4px
+  }
+
+  .loading>div {
+    margin-bottom: 12px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 500
+  }
+
+  .loading div:first-child {
+    margin-top: 35px
+  }
+
+  .loading>div i {
+    font-size: 16px;
+    padding: 6px 6px;
+    font-style: normal;
+    margin-right: 15px;
+    background-color: #fff;
+    background-image: url(/build-letter/mobile/images/check-black-icon.png);
+    background-repeat: no-repeat;
+    background-position: 50% 48%;
+    border: 1px solid #fced5b;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle
+  }
+
+  .gradient,
+  .top-content-hide {
+    position: absolute;
+    width: 100%
+  }
+
+  .loading .first {
+    animation-name: firstDiv;
+    animation-duration: 4s;
+    animation-delay: 0s
+  }
+
+  .loading .second {
+    animation-name: secondDiv;
+    animation-duration: 4s;
+    animation-delay: 1s
+  }
+
+  .loading .third {
+    animation-name: thirdDiv;
+    animation-duration: 4s;
+    animation-delay: 2s
+  }
+
+  .loading .four {
+    animation-name: fourDiv;
+    animation-duration: 4s;
+    animation-delay: 3s
+  }
+
+  .loading .five {
+    animation-name: fiveDiv;
+    animation-duration: 4s;
+    animation-delay: 4s
+  }
+
+  .loading .six {
+    animation-name: sixDiv;
+    animation-duration: 4s;
+    animation-delay: 4.5s
+  }
+
+  .loading .seven {
+    animation-name: sevenDiv;
+    animation-duration: 4s;
+    animation-delay: 5s
+  }
+
+  .loading .eight {
+    animation-name: eightDiv;
+    animation-duration: 4s;
+    animation-delay: 6s
+  }
+
+  .loading .nine {
+    animation-name: nineDiv;
+    animation-duration: 4s;
+    animation-delay: 7s
+  }
+
+  .top-content-hide {
+    background: #3d4c61;
+    top: 0;
+    z-index: 5;
+    height: 15px
+  }
+
+  .gradient {
+    height: 35px;
+    left: 0;
+    bottom: 0
+  }
+
+  .grad-top {
+    top: 0;
+    height: 50px;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%)
+  }
+
+  .grad-bottom {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%)
+  }
+
+  @keyframes Loader {
+    0% {
+      top: 0
+    }
+
+    11.11% {
+      top: -35.6px
+    }
+
+    22.2% {
+      top: -71.3px
+    }
+
+    33.33% {
+      top: -107px
+    }
+
+    44.44% {
+      top: -142px
+    }
+
+    55.55% {
+      top: -178px
+    }
+
+    66.66% {
+      top: -213.6px
+    }
+
+    77.77% {
+      top: -249.6px
+    }
+
+    88% {
+      top: -285.6px
+    }
+
+    100% {
+      top: -340.6px
+    }
+  }
+
+  @keyframes firstDiv {
+    0% {
+      background-color: #fced5b;
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes secondDiv {
+    22.2% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes thirdDiv {
+    33.33% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fourDiv {
+    44.44% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fiveDiv {
+    55.55% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sixDiv {
+    66.66% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sevenDiv {
+    77.77% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes eightDiv {
+    88.88% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes nineDiv {
+    95% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes tenDiv {
+    100% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+</style>
+<% } else { %>
+<style>
+  .loader-overlay {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    top: 0
+  }
+
+  .loader-wrapper {
+    width: 383px;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    top: 31%;
+    right: 0;
+  }
+
+  .animation-fold {
+    margin: 20px auto 0;
+    overflow: hidden;
+    position: relative;
+    height: 105px
+  }
+
+  .loading {
+    font-family: "Work Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    -webkit-animation: Loader 7s forwards;
+    animation: Loader 7s 16s forwards;
+    animation-delay: 1s;
+    letter-spacing: .4px
+  }
+
+  .loading>div {
+    margin-bottom: 12px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 500
+  }
+
+  .loading div:first-child {
+    margin-top: 35px
+  }
+
+  .loading>div i {
+    font-size: 16px;
+    padding: 6px 6px;
+    font-style: normal;
+    margin-right: 15px;
+    background-color: #fff;
+    background-image: url(/build-letter/images/check-black-icon.png);
+    background-repeat: no-repeat;
+    background-position: 50% 48%;
+    border: 1px solid #fced5b;
+    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle
+  }
+
+  .gradient,
+  .top-content-hide {
+    position: absolute;
+    width: 100%
+  }
+
+  .loading .first {
+    animation-name: firstDiv;
+    animation-duration: 4s;
+    animation-delay: 0s
+  }
+
+  .loading .second {
+    animation-name: secondDiv;
+    animation-duration: 4s;
+    animation-delay: 1s
+  }
+
+  .loading .third {
+    animation-name: thirdDiv;
+    animation-duration: 4s;
+    animation-delay: 2s
+  }
+
+  .loading .four {
+    animation-name: fourDiv;
+    animation-duration: 4s;
+    animation-delay: 3s
+  }
+
+  .loading .five {
+    animation-name: fiveDiv;
+    animation-duration: 4s;
+    animation-delay: 4s
+  }
+
+  .loading .six {
+    animation-name: sixDiv;
+    animation-duration: 4s;
+    animation-delay: 4.5s
+  }
+
+  .loading .seven {
+    animation-name: sevenDiv;
+    animation-duration: 4s;
+    animation-delay: 5s
+  }
+
+  .loading .eight {
+    animation-name: eightDiv;
+    animation-duration: 4s;
+    animation-delay: 6s
+  }
+
+  .loading .nine {
+    animation-name: nineDiv;
+    animation-duration: 4s;
+    animation-delay: 7s
+  }
+
+  .top-content-hide {
+    background: #3d4c61;
+    top: 0;
+    z-index: 5;
+    height: 15px
+  }
+
+  .gradient {
+    height: 35px;
+    left: 0;
+    bottom: 0
+  }
+
+  .grad-top {
+    top: 0;
+    height: 50px;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%)
+  }
+
+  .grad-bottom {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 100%)
+  }
+
+  @keyframes Loader {
+    0% {
+      top: 0
+    }
+
+    11.11% {
+      top: -35.6px
+    }
+
+    22.2% {
+      top: -71.3px
+    }
+
+    33.33% {
+      top: -107px
+    }
+
+    44.44% {
+      top: -142px
+    }
+
+    55.55% {
+      top: -178px
+    }
+
+    66.66% {
+      top: -213.6px
+    }
+
+    77.77% {
+      top: -249.6px
+    }
+
+    88% {
+      top: -285.6px
+    }
+
+    100% {
+      top: -340.6px
+    }
+  }
+
+  @keyframes firstDiv {
+    0% {
+      background-color: #fced5b;
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes secondDiv {
+    22.2% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes thirdDiv {
+    33.33% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fourDiv {
+    44.44% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fiveDiv {
+    55.55% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sixDiv {
+    66.66% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sevenDiv {
+    77.77% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes eightDiv {
+    88.88% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes nineDiv {
+    95% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes tenDiv {
+    100% {
+      background-color: #fced5b;
+      background-position: 50% 48%
+    }
+  }
+</style>
+<% } %>
+
+<% }  else if (locals.data.isMobile) { %>
+<style>
+  .loader-overlay {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999
+  }
+
+  .loader-overlay .auto-width {
+    width: auto;
+  }
+
+  .loader-wrapper {
+    position: fixed;
+    width: 270px;
+    left: 50%;
+    top: 166px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
+  }
+
+  .animation-fold {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 105px;
+    margin-top: 20px
+  }
+
+  .loading {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    -webkit-animation: Loader 8s forwards;
+    animation: Loader 6s .8s forwards;
+    letter-spacing: .4px
+  }
+
+  .loading>div {
+    margin-bottom: 12px;
+    font-family: 'Source Sans Pro';
+    letter-spacing: .4px
+  }
+
+  .loading div:first-child {
+    margin-top: 35px
+  }
+
+  .loading>div i {
+    font-size: 19px;
+    font-style: normal;
+    margin-right: 20px;
+    background-color: #fff;
+    background-image: url("<%= locals.data.animationDefaultIconImageUrlMobile %>");
+    background-repeat: no-repeat;
+    background-position: 50% 48%;
+    border: 1px solid "<%= locals.data.animationDefaultBorderColor %>";
+    border-radius: 20px;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle
+  }
+
+  .loading .first {
+    animation-name: firstDiv;
+    animation-duration: 2s;
+    animation-delay: .5s
+  }
+
+  .loading .second {
+    animation-name: secondDiv;
+    animation-duration: 3.8s;
+    animation-delay: 1s
+  }
+
+  .loading .third {
+    animation-name: thirdDiv;
+    animation-duration: 2s;
+    animation-delay: 1.5s
+  }
+
+  .loading .four {
+    animation-name: fourDiv;
+    animation-duration: 2s;
+    animation-delay: 2.2s
+  }
+
+  .loading .five {
+    animation-name: fiveDiv;
+    animation-duration: 2s;
+    animation-delay: 2.7s
+  }
+
+  .loading .six {
+    animation-name: sixDiv;
+    animation-duration: 2s;
+    animation-delay: 3.3s
+  }
+
+  .loading .seven {
+    animation-name: sevenDiv;
+    animation-duration: 2s;
+    animation-delay: 3.8s
+  }
+
+  .loading .eight {
+    animation-name: eightDiv;
+    animation-duration: 2s;
+    animation-delay: 4.4s;
+    animation-fill-mode: forwards
+  }
+
+  .loading .nine {
+    animation-name: nineDiv;
+    animation-duration: 2s;
+    animation-delay: 4.7s;
+    animation-fill-mode: forwards
+  }
+
+  .top-content-hide {
+    background: #3d4c61;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    height: 15px;
+    width: 100%
+  }
+
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    left: 0;
+    bottom: 0
+  }
+
+  .grad-top {
+    top: 0;
+    height: 50px;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0)
+  }
+
+  .grad-bottom {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0)
+  }
+
+  @keyframes Loader {
+    0% {
+      top: 0
+    }
+
+    11.11% {
+      top: -35.6px
+    }
+
+    22.2% {
+      top: -71.3px
+    }
+
+    33.33% {
+      top: -107px
+    }
+
+    44.44% {
+      top: -142px
+    }
+
+    55.55% {
+      top: -178px
+    }
+
+    66.66% {
+      top: -213.6px
+    }
+
+    77.77% {
+      top: -249.6px
+    }
+
+    88.88% {
+      top: -285.6px
+    }
+
+    100% {
+      top: -285.6px
+    }
+  }
+
+  @keyframes firstDiv {
+    0% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes secondDiv {
+    22.2% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes thirdDiv {
+    33.33% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fourDiv {
+    44.44% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fiveDiv {
+    55.55% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sixDiv {
+    66.66% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sevenDiv {
+    77.77% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes eightDiv {
+    88.88% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes nineDiv {
+    100% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/mobile/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+</style>
+<% } else { %>
+<style>
+  .loader-overlay {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999
+  }
+
+  .loader-overlay .auto-width {
+    width: auto;
+  }
+
+  .loader-wrapper {
+    position: fixed;
+    width: 270px;
+    left: 50%;
+    top: 166px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%)
+  }
+
+  .animation-fold {
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 105px;
+    margin-top: 20px
+  }
+
+  .loading {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    position: relative;
+    -webkit-animation: Loader 8s forwards;
+    animation: Loader 6s .8s forwards;
+    letter-spacing: .4px
+  }
+
+  .loading>div {
+    margin-bottom: 12px;
+    font-family: 'Source Sans Pro';
+    letter-spacing: .4px
+  }
+
+  .loading div:first-child {
+    margin-top: 35px
+  }
+
+  .loading>div i {
+    font-size: 19px;
+    font-style: normal;
+    margin-right: 20px;
+    background-color: #fff;
+    background-image: url("<%= locals.data.animationDefaultIconImageUrl %>");
+    background-repeat: no-repeat;
+    background-position: 50% 48%;
+    border: 1px solid "<%= locals.data.animationDefaultBorderColor %>";
+    border-radius: 20px;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle
+  }
+
+  .loading .first {
+    animation-name: firstDiv;
+    animation-duration: 2s;
+    animation-delay: .5s
+  }
+
+  .loading .second {
+    animation-name: secondDiv;
+    animation-duration: 3.8s;
+    animation-delay: 1s
+  }
+
+  .loading .third {
+    animation-name: thirdDiv;
+    animation-duration: 2s;
+    animation-delay: 1.5s
+  }
+
+  .loading .four {
+    animation-name: fourDiv;
+    animation-duration: 2s;
+    animation-delay: 2.2s
+  }
+
+  .loading .five {
+    animation-name: fiveDiv;
+    animation-duration: 2s;
+    animation-delay: 2.7s
+  }
+
+  .loading .six {
+    animation-name: sixDiv;
+    animation-duration: 2s;
+    animation-delay: 3.3s
+  }
+
+  .loading .seven {
+    animation-name: sevenDiv;
+    animation-duration: 2s;
+    animation-delay: 3.8s
+  }
+
+  .loading .eight {
+    animation-name: eightDiv;
+    animation-duration: 2s;
+    animation-delay: 4.4s;
+    animation-fill-mode: forwards
+  }
+
+  .loading .nine {
+    animation-name: nineDiv;
+    animation-duration: 2s;
+    animation-delay: 4.7s;
+    animation-fill-mode: forwards
+  }
+
+  .top-content-hide {
+    background: #3d4c61;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    height: 15px;
+    width: 100%
+  }
+
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    left: 0;
+    bottom: 0
+  }
+
+  .grad-top {
+    top: 0;
+    height: 50px;
+    z-index: 1;
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0)
+  }
+
+  .grad-bottom {
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0)
+  }
+
+  @keyframes Loader {
+    0% {
+      top: 0
+    }
+
+    11.11% {
+      top: -35.6px
+    }
+
+    22.2% {
+      top: -71.3px
+    }
+
+    33.33% {
+      top: -107px
+    }
+
+    44.44% {
+      top: -142px
+    }
+
+    55.55% {
+      top: -178px
+    }
+
+    66.66% {
+      top: -213.6px
+    }
+
+    77.77% {
+      top: -249.6px
+    }
+
+    88.88% {
+      top: -285.6px
+    }
+
+    100% {
+      top: -285.6px
+    }
+  }
+
+  @keyframes firstDiv {
+    0% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes secondDiv {
+    22.2% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes thirdDiv {
+    33.33% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fourDiv {
+    44.44% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes fiveDiv {
+    55.55% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sixDiv {
+    66.66% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes sevenDiv {
+    77.77% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes eightDiv {
+    88.88% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+
+  @keyframes nineDiv {
+    100% {
+      background-color: "<%= locals.data.animationIconColor %>";
+      background-image: url(../build-letter/images/check-white-icon.png);
+      background-repeat: no-repeat;
+      background-position: 50% 48%
+    }
+  }
+</style>
+<% } %>
+
+<div class="loader-overlay d-none" id="loaderOverlay">
+  <div class="loader-wrapper">
+    <div class="logo-wrap">
+      <img id="animationLogo" class="animationLogo" alt=" " width="255" height="45">
+      <script type="text/javascript">
+        document.getElementById('animationLogo').src = '<%- locals.data.logoPath %>';
+        if ('<%- locals.data.isLoaderWrapperAutoWidth %>' === 'true') {
+          document.querySelector('.loader-wrapper')?.classList.add('auto-width');
+        }
+      </script>
+
+    </div>
+    <div class="animation-fold">
+      <div class="gradient grad-top"></div>
+      <div class="loading">
+
+      </div>
+      <div class="gradient grad-bottom"></div>
+    </div>
+  </div>
+</div>

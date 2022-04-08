@@ -28,8 +28,8 @@
     }
 
     window.RDL = window.RDL || {};
-    window.RDL.PortalSettings = {}
-    window.RDL.blobBaseUrl = '<%- locals.data.blobBaseUrl %>'
+    window.RDL.PortalSettings = {};
+    window.RDL.blobBaseUrl = '<%- locals.data.blobBaseUrl %>';
     window.RDL.buildVersion = '<%- locals.data.buildVersion %>';
     window.RDL.authCookieName = '<%- locals.data.authCookieName %>';
     window.RDL.sourceAppCD = '<%- locals.data.sourceAppCD %>';
@@ -555,7 +555,8 @@
   </div>
   <div id="divLoginWidget" hidden data-targetDomain="<%= locals.data.commonLoginUrl %> " data-referrerId="14" data-forgotPwdUrl="/membership/forgotpassword" data-enableappendjs="false">
   </div>
-  <!-- partial loading animation -->
+  <%- include('shared/loading-animation', {data: locals.data}); %>
+
   <% if (locals.data.isShowHowItWorks) { %>
   <% if (locals.data.currentPortalDetails?.portalCD == 'cln' || locals.data.currentPortalDetails?.portalCD == 'rna') { %>
   <% if (locals.data.isMobile) { %>
