@@ -48,11 +48,11 @@ function getPortalSettings(hostname) {
     dataObj.isJoshuaTree = true; //get from config
     dataObj.unsupportedBrowserPath = '/information/unsupportedbrowsers'; // get from config
     dataObj.portalId = 14;
-    dataObj.logoPath = dataObj.baseURL + dataObj.baseProductPath + "/cln/images/cover-letter-logo.svg";
+    dataObj.logoPath = dataObj.baseUrl + dataObj.baseProductPath + "/cln/images/cover-letter-logo.svg";
     dataObj.favIconUrl = dataObj.baseUrl + dataObj.baseProductPath + "/cln/images/favicon.ico";
     if (dataObj.isJoshuaTree) {
       dataObj.isLoadWorkSans = true;
-      dataObj.logoPath = dataObj.baseURL + dataObj.baseProductPath + "/cln/images/cover-letter-logo-jt.svg";
+      dataObj.logoPath = dataObj.baseUrl + dataObj.baseProductPath + "/cln/images/cover-letter-logo-jt.svg";
     }
     dataObj.isSkipCache = true;
     dataObj.culture = "en";
