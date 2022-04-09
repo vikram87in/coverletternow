@@ -1,0 +1,722 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+  html {
+    height: 100%;
+    font-size: 10px;
+  }
+
+  body.how-it-works-page {
+    color: #2e2e2e;
+    background: #fff !important;
+    font-size: 1.3rem !important;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    line-height: 1;
+    min-height: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .how-it-works-page,
+  .how-it-works-page::before,
+  .how-it-works-page::after,
+  .how-it-works-page *,
+  .how-it-works-page *::before,
+  .how-it-works-page *::after {
+    box-sizing: border-box
+  }
+
+  .how-it-works-page,
+  .how-it-works-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .how-it-works-page .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .how-it-works-page article,
+  .how-it-works-page aside,
+  .how-it-works-page dialog,
+  .how-it-works-page figcaption,
+  .how-it-works-page figure,
+  .how-it-works-page footer,
+  .how-it-works-page header,
+  .how-it-works-page hgroup,
+  .how-it-works-page main,
+  .how-it-works-page nav,
+  .how-it-works-page section {
+    display: block;
+  }
+
+
+
+  .how-it-works-page #contact-us-link {
+    color: #2e2e2e;
+    font-weight: 600;
+    font-size: 1.2rem;
+    position: relative;
+    font-family: 'Work Sans';
+  }
+
+  .how-it-works-page #contact-us-link:hover,
+  .how-it-works-page #contact-us-link:active {
+    text-decoration: underline;
+  }
+
+  .how-it-works-page .header-logo img {
+    text-align: left;
+    width: 104px;
+    height: 27px;
+  }
+
+  .how-it-works-page .hiw-step {
+    display: flex;
+    justify-content: center;
+  }
+
+  .how-it-works-page .hiw-item:nth-child(-n+2) .img-sec,
+  .how-it-works-page .hiw-item:nth-child(2) img {
+    margin-right: 10px;
+  }
+
+  .how-it-works-page .hiw-item:nth-child(3) .img-sec {
+    margin-right: 2px;
+  }
+
+  .how-it-works-page .hiw-item:nth-child(3) .hiw-desc {
+    padding: 0 35px;
+  }
+
+  .how-it-works-page .hiw-desc {
+    margin: 10px 0 10px;
+    color: #2E2E2E;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .how-it-works-page .hiw-terms-privacy {
+    font-size: 8px !important;
+    margin-top: 5px;
+    font-weight: 500;
+    line-height: 14px;
+    margin-bottom: 0;
+  }
+
+  .how-it-works-page .jumbotron-footer {
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    left: 0;
+    padding: 20px 30px 22px
+  }
+
+  .how-it-works-page .btn-primary {
+    background-color: #FCED5B;
+    color: #2E2E2E;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    padding: 16px 0;
+    min-width: 260px;
+    width: 100%;
+  }
+
+  .how-it-works-page .img-sec {
+    color: #FFFFFF;
+    font-family: "Work Sans";
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+    background-color: #2E2E2E;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .how-it-works-page .how-it-works-contents .container:nth-child(1) {
+    padding: 10px 30px 10px;
+  }
+
+  .how-it-works-page .how-it-works-contents .container:nth-child(2) {
+    padding: 0 30px 12px;
+  }
+
+  .how-it-works-page header img {
+    width: 104px;
+    height: 27px;
+  }
+
+  .how-it-works-page label {
+    color: #fff;
+    font-size: 11px;
+    font-weight: unset;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 0 !important;
+  }
+
+  .how-it-works-page .main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 215.67px);
+  }
+
+  .how-it-works-page .hiw-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+
+  .how-it-works-page .h1.p-title {
+    color: #2E2E2E;
+    font-family: "Work Sans";
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0 0 25px;
+  }
+
+
+
+
+  .how-it-works-page .hiw-item:nth-child(1) img {
+    width: 79px;
+    height: 63px;
+  }
+
+  .how-it-works-page .hiw-item:nth-child(2) img {
+    width: 59px;
+    height: 80px;
+  }
+
+  .how-it-works-page .hiw-item:nth-child(3) img {
+    width: 80px;
+    height: 70px;
+  }
+
+  .how-it-works-page .d-none {
+    display: none !important;
+  }
+
+  .how-it-works-page .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  .how-it-works-page .col-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+
+  .how-it-works-page .col-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+
+  .how-it-works-page a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .how-it-works-page .mt-3,
+  .how-it-works-page .my-3 {
+    margin-top: 1rem !important;
+  }
+
+  .how-it-works-page .mt-4,
+  .how-it-works-page .my-4 {
+    margin-top: 1.5rem !important;
+  }
+
+  .how-it-works-page a {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+
+  }
+
+  .how-it-works-page .text-right {
+    text-align: right !important;
+  }
+
+  .how-it-works-page .text-uppercase {
+    text-transform: uppercase !important;
+  }
+
+  .how-it-works-page .col-7,
+  .how-it-works-page .col-md-8,
+  .how-it-works-page .col-5,
+  .how-it-works-page .col-md-4 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .how-it-works-page .text-center {
+    text-align: center !important;
+  }
+
+  .how-it-works-page a,
+  .how-it-works-page .link {
+    color: #005fb0;
+  }
+
+  @media (max-height: 600px) {
+
+    .how-it-works-page .jumbotron-footer {
+      padding: 0 30px;
+    }
+
+    .how-it-works-page .how-it-works-contents .container:nth-child(1) {
+      padding: 10px 20px 0px !important;
+    }
+
+    .how-it-works-page .hiw-desc {
+      margin: 10px 0;
+      line-height: 20px
+    }
+
+    .how-it-works-page .h1.p-title {
+      font-size: 20px
+    }
+
+    .how-it-works-page .hiw-item:nth-child(1) img {
+      width: 74px;
+      height: 53px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(2) img {
+      width: 54px;
+      height: 65px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(3) img {
+      width: 75px;
+      height: 55px;
+    }
+  }
+
+  @media (max-height: 620px) {
+    .how-it-works-page .hiw-desc {
+      margin: 5px 0 5px
+    }
+
+    .how-it-works-page .jumbotron-footer {
+      padding: 20px 30px 10px;
+    }
+  }
+
+  @media (min-height: 650px) {
+
+    .how-it-works-page .hiw-item:nth-child(1) img {
+      width: 84px;
+      height: 73px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(2) img {
+      width: 64px;
+      height: 85px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(3) img {
+      width: 85px;
+      height: 75px;
+    }
+
+    .how-it-works-page .hiw-desc {
+      font-size: 18px;
+      line-height: 26px
+    }
+
+    .how-it-works-page .hiw-item:nth-child(3) .hiw-desc {
+      padding: 0 25px
+    }
+  }
+
+  @media (min-height: 750px) {
+    .how-it-works-page .hiw-item:nth-child(1) img {
+      width: 89px;
+      height: 78px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(2) img {
+      width: 69px;
+      height: 90px;
+    }
+
+    .how-it-works-page .hiw-item:nth-child(3) img {
+      width: 90px;
+      height: 85px;
+    }
+
+    .how-it-works-page .hiw-desc {
+      font-size: 20px;
+      line-height: 30px;
+      margin: 15px 0 30px;
+    }
+
+    .how-it-works-page header img {
+      width: 120px;
+      height: 40px
+    }
+  }
+
+  .clb-global-loader-overlay {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999
+  }
+
+  .clb-global-loader-overlay .clb-global-loader-wrapper {
+    background: #fff;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    height: 55px;
+    position: fixed;
+    width: 222px;
+    right: 2.6rem;
+    bottom: 1.9rem;
+    z-index: 99999
+  }
+
+  .spinner-circle {
+    position: relative;
+    margin: 18px auto 0 18px;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to right, #89D6EC 50%, rgba(46, 46, 46, 0) 80%);
+    border-radius: 100%;
+    animation: spin 1s infinite linear
+  }
+
+  .clb-global-loader-overlay .clb-global-loader-wrapper .loader-text {
+    color: #2e2e2e;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    padding: 22px 0 12px 49px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Work Sans", sans-serif;
+    line-height: 1
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+
+  @-webkit-keyframes spin {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
+</style>
+<main class="how-it-works-contents d-none" id="howItWorks">
+  <header class="onboarding-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-7">
+          <a class="mt-3" href="/"><img src="<%= locals.data.logoPath %>" alt="cover-letter-logo" class="logo"></a>
+        </div>
+        <div class="col-md-4 text-right mt-4 col-5">
+          <a href="javascript:void(0)" id="contact-us-link" class="text-contact text-uppercase " onclick="openContactUsPage(true)"><i class="icon-sprite icon-light-email float-left"></i><%= JSON.parse(locals.data.localization).lbl_contactUs %></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="h1 p-title text-center">How to Create a<br> Job-Winning Cover Letter</h1>
+
+      <div class="main-wrapper">
+        <div class="hiw-section">
+          <div class="hiw-item">
+            <div class="hiw-step">
+              <div class="img-sec"><label class="step-one">1</label></div>
+              <img src="/blobcontent/sem/cln/expert_suggestions.svg" alt="hiw image" />
+            </div>
+            <p class="hiw-desc"><%= JSON.parse(locals.data.localization).lbl_fill_out_section_expert_suggestions %></p>
+          </div>
+          <div class="hiw-item">
+            <div class="hiw-step">
+              <div class="img-sec"><label class="step-two">2</label></div>
+              <img src="/blobcontent/sem/cln/choose_professional_template.svg" alt="hiw image" />
+            </div>
+            <p class="hiw-desc"><%= JSON.parse(locals.data.localization).lbl_choose_professionally_designed_template %></p>
+          </div>
+          <div class="hiw-item">
+            <div class="hiw-step">
+              <div class="img-sec"><label class="step-three">3</label></div>
+              <img src="/blobcontent/sem/cln/tailor_your_cover_letter.svg" alt="hiw image" />
+            </div>
+            <p class="hiw-desc"><%= JSON.parse(locals.data.localization).lbl_tailors_your_letter %></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="jumbotron-footer text-center">
+        <button id="btnGetStarted" class="btn btn-primary btn-lg" onclick="onHIWContinue()"><%= JSON.parse(locals.data.localization).lbl_getStarted %></button>
+        <p class="hiw-terms-privacy" id="hiw_terms_privacy">
+          <%= JSON.parse(locals.data.localization).lbl_by_clicking_footer %>
+          <a id="term-of-use-link" class="link" href="javascript:void(0)" onclick="openTermsOfUse()">
+            <%= JSON.parse(locals.data.localization).lbl_terms %>
+          </a>
+          <%= JSON.parse(locals.data.localization).lbl_and %>
+          <a id="privacy-policy-link" class="link" href="javascript:void(0)" onclick="openPrivacyPolicy()">
+            <%= JSON.parse(locals.data.localization).lbl_privacy %>
+          </a>.
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+<section id="hiwSpinningLoader" class="clb-global-loader-overlay d-none">
+  <section class="clb-global-loader-wrapper clearfix">
+    <div class="spinner-circle float-left">
+      <div class="spinner-circle-gradient"></div>
+      <div class="spinner-circle-inner"></div>
+    </div>
+    <p class="loader-text"><%= JSON.parse(locals.data.localization).lbl_loading_please_wait %></p>
+  </section>
+</section>
+
+
+<script type="text/javascript">
+  function getQueryString(field) {
+    var href = window.location.href;
+    var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+    var string = reg.exec(href);
+    return string ? string[1] : '';
+  }
+
+  function readLS(key) {
+    var valString = window.localStorage && window.localStorage.getItem(key);
+    if (valString) {
+      return valString;
+    } else {
+      return null;
+    }
+  }
+
+  function createLS(key, val) {
+    if (window.localStorage && key) {
+      window.localStorage.setItem(key, val);
+    }
+  }
+
+  function skipHIWpage() {
+
+    return false;
+  }
+
+  function onHIWContinue() {
+    RDL.isTOSPPAceepted = true;
+    var event;
+    if (typeof(Event) === 'function') {
+      event = new Event('tosppaceeptedonhiw');
+    } else {
+      event = document.createEvent('Event');
+      event.initEvent('tosppaceeptedonhiw', true, true);
+    }
+
+    window.dispatchEvent(event);
+    // window.dispatchEvent(new Event("tosppaceeptedonhiw"));
+    if (window.RDL.conductBBFMobileOnHIWClick) {
+      document.getElementById("hiwSpinningLoader") && document.getElementById("hiwSpinningLoader").classList.remove("d-none");
+    }
+    RDL.onHIWContinue && RDL.onHIWContinue();
+    hideHIWPage(0, true);
+    var terms_privacy_text = document.getElementById("hiw_terms_privacy");
+    terms_privacy_text && terms_privacy_text.parentNode.removeChild(terms_privacy_text);
+  }
+
+  function openContactUsPage(fireClickEvent) {
+    window.open(window.RDL.Paths.ContactUsUrl, '_blank');
+    if (fireClickEvent) {
+      fireContactClickEvent();
+    }
+  }
+
+  function openTermsOfUse() {
+    window.open(window.RDL.Paths.termsOfUseURL, '_blank');
+  }
+
+  function openPrivacyPolicy() {
+    window.open(window.RDL.Paths.privacyURL, '_blank');
+  }
+
+  function createCookie(name, value, days) {
+    var expires = "";
+    var requestingDomain = location.hostname.split('.').reverse()[1] + "." + location.hostname.split('.').reverse()[0];
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      expires = "; expires=" + date.toGMTString();
+    } else
+      expires = "";
+    document.cookie = name + "=" + value + expires + "; path=/;domain=." + requestingDomain;
+  }
+
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  function fireContactClickEvent() {
+    if (RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL && RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL && RDL.objClaims && RDL.objClaims.role == "User") || false;
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "clicked",
+        "screen name": "how it works",
+        "click option": "contact us",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+    }
+  }
+
+  function showHIWPage(fireViewEvent) {
+    var howItWorksElement = document.getElementById("howItWorks");
+    if (howItWorksElement) {
+      howItWorksElement.classList.remove("d-none");
+    }
+    document.getElementById("app").classList.add("d-none");
+    createLS("showingHIW", "1");
+    document.body.classList.add("how-it-works-page");
+    //fire viewed event
+    fireViewEvent && fireHIWViewedEvent();
+
+    var isTOSPPAgreed = RDL.readLS && RDL.IS_TOS_PP_AGREED && !!RDL.readLS(RDL.IS_TOS_PP_AGREED);
+    if (isTOSPPAgreed) {
+      var terms_privacy_text = document.getElementById("hiw_terms_privacy");
+      terms_privacy_text && terms_privacy_text.parentNode.removeChild(terms_privacy_text);
+    }
+    firePageEvent();
+
+  }
+
+  function fireHIWViewedEvent() {
+    if (RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL.objClaims && RDL.objClaims.role == "User") || false;
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "viewed",
+        "screen name": "how it works",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+    }
+  }
+
+  function firePageEvent() {
+    var userType;
+    vsuid = RDL.readCookie("vstr");
+    userType = vsuid == null ? "New" : "Returning";
+    if (RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL.objClaims && RDL.objClaims.role == "User") || false;
+      RDL.TrackEvents("page", {
+        'Visitor Type': userType
+      }, userId, isLoggedInUser.toString().toUpperCase());
+    }
+  }
+
+  function hideHIWPage(cookieVal, fireClickEvent) {
+    document.getElementById("app").classList.remove("d-none");
+    var howItWorksElement = document.getElementById("howItWorks");
+    if (howItWorksElement) {
+      howItWorksElement.classList.add("d-none");
+    }
+    createLS("showingHIW", cookieVal.toString());
+    document.body.classList.remove("how-it-works-page");
+
+    if (fireClickEvent && RDL && typeof RDL.TrackEvents == "function") {
+      var userId = RDL && RDL.objClaims && RDL.objClaims.user_uid || '';
+      var isLoggedInUser = (RDL && RDL.objClaims && RDL.objClaims.role == "User") || false;
+      //fire clicked event
+      RDL.TrackEvents("builder usage", {
+        "builder type": "cover letters",
+        "action": "clicked",
+        "screen name": "how it works",
+        "flow name": "cover letter v2 react"
+      }, userId, isLoggedInUser.toString().toUpperCase());
+
+    }
+  }
+
+  function removeHIWPage() {
+    var elem = document.getElementById('howItWorks');
+    elem && elem.parentNode.removeChild(elem);
+    hideHIWPage(-1);
+  }
+
+  function experimentRelatedProcessing() {
+
+    window.RDL.conductBBFMobileOnHIWClick = true;
+    if (typeof hideloadingAnimation == 'function') {
+      hideloadingAnimation();
+    }
+  }
+
+  window.addEventListener("load", function() {
+    document.getElementById("app").classList.add("d-none");
+
+    var cookie_ShowingHIW = readLS("showingHIW"); // 1: HIW page visible; 0: HIW page hidden;
+    var skipHIW = skipHIWpage();
+
+    if (cookie_ShowingHIW && cookie_ShowingHIW != 1) {
+      hideHIWPage(0);
+    } else {
+      showHIWPage();
+      experimentRelatedProcessing();
+    }
+  });
+</script>

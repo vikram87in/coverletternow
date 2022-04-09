@@ -555,17 +555,17 @@
   </div>
   <div id="divLoginWidget" hidden data-targetDomain="<%= locals.data.commonLoginUrl %> " data-referrerId="14" data-forgotPwdUrl="/membership/forgotpassword" data-enableappendjs="false">
   </div>
-  <%- include('shared/loading-animation', {data: locals.data}); %>
+  <%- include('shared/_loading-animation', {data: locals.data}); %>
 
   <% if (locals.data.isShowHowItWorks) { %>
   <% if (locals.data.currentPortalDetails?.portalCD == 'cln' || locals.data.currentPortalDetails?.portalCD == 'rna') { %>
   <% if (locals.data.isMobile) { %>
-  <!-- now hidw direct mobiel  -->
+  <%- include('shared/_hiw-direct-mobile', {data: locals.data}); %>
   <% } else { %>
-  <!-- now hiw direct -->
+  <%- include('shared/_hiw-direct', {data: locals.data}); %>
   <% } %>
   <% } else { %>
-  <!-- how it works partial -->
+  <%- include('shared/_how-it-works', {data: locals.data}); %>
   <% } %>
   <% } %>
   <div id="app"></div>
