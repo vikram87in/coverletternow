@@ -1,0 +1,28 @@
+{
+  "buildVersion": "token_buildversion",
+  "authCookieName": "UserStatus",
+  "blobBaseUrl": "/blobcontent/",
+  "language": "en",
+  "allowOptions": false,
+  "isJoshuaTree": true,
+  "portalId": 13,
+  "portalCd": "rna",
+  "isLoadWorkSans": true,
+  "isSkipCache": true,
+  "logoPath": "/rna/images/logo.svg",
+  "uiExperimentJSPath": "/ui-experimentation/{0}/experiment.js",
+  "unsupportedBrowserPath": "/information/unsupportedbrowsers",
+  "cssBundlePartialPath": "/build/stylesheets/rna/main-",
+  "bootstrapPartialPath": "/build/stylesheets/bootstrap/rna/bootstrap.css",
+  "isAccessibility": true,
+  "portalDetails": {
+    "portalCD": "rna",
+    "portalID": 13,
+    "culture": "en-US",
+    "isAccountsEnabled": true,
+    "isOptionCall": false,
+    "placeholderColorTxtColor": "#FF6600",
+    "SDSB": 2,
+    "basePath": ""
+  }
+}
