@@ -16,6 +16,7 @@
   "unsupportedBrowserPath": "/information/unsupportedbrowsers",
   "cssBundlePartialPath": "/build/stylesheets/clnjt/main-",
   "bootstrapPartialPath": "/build/stylesheets/bootstrap/cln/bootstrap.css",
+  "featuresPath": "config/features/cln",
   "isAccessibility": true,
   "portalDetails": {
     "portalCD": "cln",

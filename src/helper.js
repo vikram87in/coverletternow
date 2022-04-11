@@ -4,42 +4,31 @@ const dotenv = require('dotenv');
 dotenv.config({
   path: path.resolve(process.cwd(), 'qa.env')  // TODO: make it env specific
 });
-const localizationUS = require('./resource-files/resource.en-us.json');
+const localizationUS = require('./resource-files/resource.en-us.json'); //TODO: make it culture specific
 
 async function getStaticData(hostname, isMobile, IsFinalizeTestBed) {
   try {
-    let dataObj = getPortalWiseData(hostname, isMobile, IsFinalizeTestBed);
-    dataObj.featureList = await getFeaturesList(); //TODO: move this call in portalspecific code
+    const urlWithoutSubDomain = getWithoutSubDomain(hostname);
+    const dataObj = await getPortalWiseData(urlWithoutSubDomain, isMobile, IsFinalizeTestBed);
     return dataObj;
   } catch (error) {
     return {};
   }
 }
 
-async function getFeaturesList() {
-  const url = 'https://api-qa-embedded-builder.cover-letter-now.com/api/v1/config/features/cln?skipCache=true'; //from config
-  try {
-    const res = await fetch(url);
-    const data = res.json();
-    return data;
-  } catch (err) {
-    // throw `Error while fetching the feature list: ${err.message || err}`;
-    return [];
-  }
-}
-
-function getPortalWiseData(hostname, isMobile = false, IsFinalizeTestBed = false) {
-  // console.log('1: ', hostname);
-  const urlWithoutSubDomain = getWithoutSubDomain(hostname);
-  // console.log('2: ', urlWithoutSubDomain);
+async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinalizeTestBed = false) {
+  const dataObj = {};
+  // get configuration file
   let config;
   try {
     config = require('./configurations/' + urlWithoutSubDomain + '/config.json');
   } catch (error) {
     config = require('./configurations/cover-letter-now.com/config.json');
   }
-  // console.log('3: ', config.desktopRoutes);
-  const dataObj = {};
+
+  // get features list
+  dataObj.featureList = await getFeaturesList(urlWithoutSubDomain, config.featuresPath, config.isSkipCache);
+
   dataObj.isMobile = isMobile;
   dataObj.IsFinalizeTestBed = IsFinalizeTestBed;
   dataObj.docTypeProp = isMobile ? 'html Cache-Control no-transform' : 'html';
@@ -54,7 +43,6 @@ function getPortalWiseData(hostname, isMobile = false, IsFinalizeTestBed = false
   dataObj.disableTestsScriptUrl = dataObj.urlDirectory + "/scripts/disableTestsScript.js?v=" + dataObj.buildVersion;
   dataObj.logoPath = dataObj.blobBaseUrl + dataObj.baseProductPath + config.logoPath;
   dataObj.favIconUrl = dataObj.blobBaseUrl + dataObj.baseProductPath + "/" + config.portalCd + "/images/favicon.ico";
-  dataObj.isSkipCache = config.isSkipCache;
   dataObj.enableReactRoutes = config.enableReactRoutes;
   dataObj.skipHistoryPushState = config.skipHistoryPushState;
   dataObj.reactRoutes = isMobile ? config.mobileRoutes : config.desktopRoutes;
@@ -76,6 +64,20 @@ function getPortalWiseData(hostname, isMobile = false, IsFinalizeTestBed = false
   dataObj.isLoadMontserrat = false;
   dataObj.isShowHowItWorks = isMobile ? true : true; // TODO: get from features call for desktop
   return dataObj;
+}
+
+async function getFeaturesList(urlWithoutSubDomain, featuresPath, isSkipCache) {
+  const url = process.env.apiUrl?.replace('{0}', urlWithoutSubDomain)
+    + featuresPath
+    + (isSkipCache ? '?skipCache=true' : '');
+  try {
+    const res = await fetch(url);
+    const data = res.json();
+    return data;
+  } catch (err) {
+    // throw `Error while fetching the feature list: ${err.message || err}`;
+    return [];
+  }
 }
 
 function getWithoutSubDomain(hostname = '') {
