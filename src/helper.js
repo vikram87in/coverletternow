@@ -28,6 +28,7 @@ async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinali
 
   // get features list
   dataObj.featureList = await getFeaturesList(urlWithoutSubDomain, config.featuresPath, config.isSkipCache);
+  const showHIWDesktop = Array.isArray(dataObj.featureList) && dataObj.featureList.find(x => x.featureCD == "SHWHIW")?.isActive;
 
   dataObj.isMobile = isMobile;
   dataObj.IsFinalizeTestBed = IsFinalizeTestBed;
@@ -62,7 +63,7 @@ async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinali
   dataObj.bodyClass = '';
   dataObj.isLoadSansProWithRobotoSlab = false;
   dataObj.isLoadMontserrat = false;
-  dataObj.isShowHowItWorks = isMobile ? true : true; // TODO: get from features call for desktop
+  dataObj.isShowHowItWorks = isMobile ? true : showHIWDesktop;
   return dataObj;
 }
 
