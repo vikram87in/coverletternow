@@ -1,22 +1,27 @@
 const fetch = require('node-fetch');
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({
-  path: path.resolve(process.cwd(), 'qa.env')  // TODO: make it env specific
-});
 
 async function getStaticData(hostname, isMobile, IsFinalizeTestBed) {
   try {
+    const subDomain = getSubDomain(hostname);
     const urlWithoutSubDomain = getWithoutSubDomain(hostname);
-    const dataObj = await getPortalWiseData(urlWithoutSubDomain, isMobile, IsFinalizeTestBed);
+    const dataObj = await getPortalWiseData(subDomain, urlWithoutSubDomain, isMobile, IsFinalizeTestBed);
     return dataObj;
   } catch (error) {
     return {};
   }
 }
 
-async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinalizeTestBed = false) {
+async function getPortalWiseData(subDomain, urlWithoutSubDomain, isMobile = false, IsFinalizeTestBed = false) {
   const dataObj = {};
+
+  // loads appropriate .env file
+  const envFile = getEnvFile(subDomain);
+  dotenv.config({
+    path: path.resolve(process.cwd(), envFile)
+  });
+
   // get configuration file
   let config;
   try {
@@ -84,12 +89,36 @@ async function getFeaturesList(urlWithoutSubDomain, featuresPath, isSkipCache) {
   }
 }
 
+function getSubDomain(hostname = '') {
+  try {
+    return hostname.slice(0, hostname.indexOf('.'));
+  } catch (error) {
+    return 'www';
+  }
+}
+
 function getWithoutSubDomain(hostname = '') {
   try {
     return hostname.slice(hostname.indexOf('.') + 1);
   } catch (error) {
     return 'cover-letter-now.com';
   }
+}
+
+function getEnvFile(subDomain) {
+  let mappedDomain;
+  switch (subDomain) {
+    case 'www':
+    case 'stg':
+      mappedDomain = 'prod.env';
+      break;
+    case 'reg':
+      mappedDomain = 'reg.env';
+      break;
+    default:
+      mappedDomain = 'qa.env';
+  }
+  return mappedDomain;
 }
 
 module.exports = { getStaticData };
