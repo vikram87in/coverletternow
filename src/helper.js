@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 dotenv.config({
   path: path.resolve(process.cwd(), 'qa.env')  // TODO: make it env specific
 });
-const localizationUS = require('./resource-files/resource.en-us.json'); //TODO: make it culture specific
 
 async function getStaticData(hostname, isMobile, IsFinalizeTestBed) {
   try {
@@ -30,6 +29,10 @@ async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinali
   dataObj.featureList = await getFeaturesList(urlWithoutSubDomain, config.featuresPath, config.isSkipCache);
   const showHIWDesktop = Array.isArray(dataObj.featureList) && dataObj.featureList.find(x => x.featureCD == "SHWHIW")?.isActive;
 
+  // get localization file
+  const localizationFile = "./resource-files/resource." + config.portalDetails?.culture?.toLowerCase() + ".json";
+  const localization = require(localizationFile);
+
   dataObj.isMobile = isMobile;
   dataObj.IsFinalizeTestBed = IsFinalizeTestBed;
   dataObj.docTypeProp = isMobile ? 'html Cache-Control no-transform' : 'html';
@@ -37,7 +40,7 @@ async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinali
   dataObj.baseProductPath = 'clb';
   dataObj.urlDirectory = '/build-letter' + (isMobile ? "/mobile" : "");
   dataObj.buildVersion = 'token_buildversion';
-  dataObj.pageTitle = localizationUS.clb_coveringLetterBuilder;
+  dataObj.pageTitle = localization.clb_coveringLetterBuilder;
   dataObj.authCookieName = 'UserStatus';
   dataObj.isLoadWorkSans = config.isLoadWorkSans;
   dataObj.blobBaseUrl = config.blobBaseUrl;
@@ -48,7 +51,7 @@ async function getPortalWiseData(urlWithoutSubDomain, isMobile = false, IsFinali
   dataObj.skipHistoryPushState = config.skipHistoryPushState;
   dataObj.reactRoutes = isMobile ? config.mobileRoutes : config.desktopRoutes;
   dataObj.isAccessibility = config.isAccessibility;
-  dataObj.localization = JSON.stringify(localizationUS);
+  dataObj.localization = JSON.stringify(localization);
   dataObj.unsupportedBrowserPath = config.unsupportedBrowserPath;
   dataObj.uiExperimentJSPath = config.uiExperimentJSPath?.replace('{0}', config.portalCd);
   dataObj.currentPortalDetails = config.portalDetails;
