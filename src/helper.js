@@ -31,7 +31,7 @@ async function getPortalWiseData(subDomain, urlWithoutSubDomain, isMobile = fals
   }
 
   // get features list
-  dataObj.featureList = await getFeaturesList(urlWithoutSubDomain, config.featuresPath, config.isSkipCache);
+  dataObj.featureList = await getFeaturesList(process.env.apiUrl, urlWithoutSubDomain, config.featuresPath, config.isSkipCache);
   const showHIWDesktop = Array.isArray(dataObj.featureList) && dataObj.featureList.find(x => x.featureCD == "SHWHIW")?.isActive;
 
   // get localization file
@@ -54,7 +54,7 @@ async function getPortalWiseData(subDomain, urlWithoutSubDomain, isMobile = fals
   dataObj.favIconUrl = dataObj.blobBaseUrl + dataObj.baseProductPath + "/" + config.portalCd + "/images/favicon.ico";
   dataObj.enableReactRoutes = config.enableReactRoutes;
   dataObj.skipHistoryPushState = config.skipHistoryPushState;
-  dataObj.reactRoutes = isMobile ? config.mobileRoutes : config.desktopRoutes;
+  dataObj.reactRoutes = (isMobile ? config.mobileRoutes : config.desktopRoutes) || {};
   dataObj.isAccessibility = config.isAccessibility;
   dataObj.localization = JSON.stringify(localization);
   dataObj.unsupportedBrowserPath = config.unsupportedBrowserPath;
@@ -75,16 +75,15 @@ async function getPortalWiseData(subDomain, urlWithoutSubDomain, isMobile = fals
   return dataObj;
 }
 
-async function getFeaturesList(urlWithoutSubDomain, featuresPath, isSkipCache) {
-  const url = process.env.apiUrl?.replace('{0}', urlWithoutSubDomain)
+async function getFeaturesList(apiUrl, urlWithoutSubDomain, featuresPath, isSkipCache) {
+  const url = apiUrl?.replace('{0}', urlWithoutSubDomain)
     + featuresPath
     + (isSkipCache ? '?skipCache=true' : '');
   try {
     const res = await fetch(url);
-    const data = res.json();
+    const data = await res.json();
     return data;
   } catch (err) {
-    // throw `Error while fetching the feature list: ${err.message || err}`;
     return [];
   }
 }
