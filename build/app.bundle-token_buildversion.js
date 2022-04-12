@@ -238,6 +238,28 @@ RDL.experimentsObj = {
         isActive: false,
         isCheckVariant: true
     },
+    SkipTemplatePage: {
+        experimentname: "CLN Skip Template",
+        experimentId: "e15c334e-dd99-41c5-b26f-0121610594a1",
+        variants: [{ 1: "Control" }, { 2: "Skip Template" }, { 3: "Variability Estimator" }],
+        portalsForConduction: ["CLN"],
+        cookie: "isSkipChooseTemplate",
+        activeVariant: "",
+        setVariant: function (variant) {
+            RDL.experimentsObj.SkipTemplatePage.activeVariant = variant;
+            if (variant == 2) {
+                RDL.experimentControl.isSkipChooseTemplate = true;
+            };
+        },
+        isSPA: true,
+        isActive: false,
+        isCheckVariant: true
+    }
+}
+
+if (RDL.joshuaTreeINTL) {
+    if (!document.body.classList.contains("jt-redesign-lp"))
+        document.body.classList.add("jt-redesign-lp");
 }
 
 window.RDL.defaultPlaceholderColor = "#0000FF";
@@ -1213,25 +1235,17 @@ function loadCommonSegment() {
             window.segment.CommonProps['Login Status'] = 'TRUE';
         }
     }
-    loadJs(window.RDL.commonSegmentURL + "?v=" + window.RDL.buildVersion);
+    if (!window.RDL.disableSegmentLoading) {
+        loadJs(window.RDL.commonSegmentURL + "?v=" + window.RDL.buildVersion);
+    }
 }
 
 function loadSegmentJS() {
-    if (!window.RDL.disableSegmentLoading) {
-        if (window.RDL.commonSegmentURL) {
-            loadCommonSegment();
-        }
-        else {
-            loadJs(window.RDL.Paths.rootURL + 'build-letter/scripts/segment-io.js?v=' + window.RDL.buildVersion);
-        }
-    } else {
-        window.segment = {
-            CommonProps: {
-                'Platform': 'Web',
-                'Feature Set': 'Cover Letters',
-                'Login Status': 'FALSE'
-            }
-        };
+    if (window.RDL.commonSegmentURL) {
+        loadCommonSegment();
+    }
+    else {
+        loadJs(window.RDL.Paths.rootURL + 'build-letter/scripts/segment-io.js?v=' + window.RDL.buildVersion);
     }
 }
 
@@ -1329,6 +1343,10 @@ RDL.onHIWContinue = function () {
         //Conducting TemplatePageSocialProof
         if (!RDL.experimentsObj.TemplatePageSocialProof.activeVariant) {
             window.RDL.ConductExperiment(RDL.experimentsObj.TemplatePageSocialProof, false, true);
+        }
+        //Conducting SkipChooseTemplate Page
+        if (!RDL.experimentsObj.SkipTemplatePage.activeVariant) {
+            window.RDL.ConductExperiment(RDL.experimentsObj.SkipTemplatePage, false, true);
         }
     }
     RDL.editorComponent && RDL.editorComponent.handleHIWContinue && RDL.editorComponent.handleHIWContinue();
@@ -1983,5 +2001,53 @@ function handleConfig(result, resolve) {
     window.RDL.disableSegmentLoading = data.disableSegmentLoading || false;
     window.RDL.gdprSwitchUserConsent = data.gdprSwitchUserConsent || false;
     window.RDL.enableDomainPhotoUrl = data.enableDomainPhotoUrl || false;
+    window.RDL.blankLetterType = data.blankLetterType;
+    window.RDL.defaultContactSection = data.defaultContactSection || false;
+    window.RDL.disableTTCDependency = data.disableTTCDependency || false;
+    if (RDL.joshuaTreeINTL) {
+
+        window.RDL.showColorPicker = true;
+        window.RDL.disableCategoryOnJoshua = true;
+        window.RDL.showHTMLTemplateSkins = true;
+        window.RDL.colorPickerRedesign = true;
+        window.RDL.customColorPickerOptions = data.customColorPickerOptions || [];
+        window.RDL.colorPickerDefault = data.colorPickerDefault || [];
+    }
+
     resolve("");
+}
+if (RDL.joshuaTreeINTL) {
+    let limiter = true;
+    const throttleResumePreviewScaling = (element, scale, timer) => {
+        if (limiter) {
+            element.style.transform = 'scale(' + scale + ')';
+            limiter = false;
+            setTimeout(() => {
+                limiter = true;
+            }, timer)
+        }
+    }
+    window.addEventListener('resize', () => {
+        if (window.outerWidth < 1150) {
+            if (window.outerWidth < screen.availWidth || window.outerHeight < screen.availHeight) {
+                let element = document.querySelector('.right-sidebar-letter .document');
+                let scale = Math.min(window.outerWidth / screen.availWidth, window.outerHeight / screen.availHeight);
+                if (element) {
+                    throttleResumePreviewScaling(element, scale, 100);
+                }
+            }
+            else {
+                let element = document.querySelector('.right-sidebar-letter .document');
+                if (element) {
+                    throttleResumePreviewScaling(element, 1, 100);
+                }
+            }
+        }
+        else {
+            let element = document.querySelector('.right-sidebar-letter .document');
+            if (element) {
+                element.removeAttribute('style');
+            }
+        }
+    })
 }
